@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whole Earth Catalog y la Cibernética</title>
+<style>
+  :root {
+    --turquesa: #4DB6AC;
+    --mostaza: #F2C94C;
+    --magenta: #D16BA5;
+    --azulvioleta: #5B5FE0;
+    --arena: #F5E3B3;
+    --gradiente: linear-gradient(135deg, #5B5FE0, #4DB6AC, #F2C94C, #D16BA5);
+  }
+  html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden;
+    font-family: 'Helvetica Neue', sans-serif; color: #fff; background: var(--azulvioleta);
+  }
+  .slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    transition: background 2s ease;
+  }
+  .active { display: flex; animation: fadeIn 1.5s ease forwards; }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);} to {opacity: 1; transform: scale(1);}
+  }
+  h1, h2 { margin: 0.2em; }
+  h1 { font-size: 3em; background: var(--gradiente); -webkit-background-clip: text; color: transparent; }
+  h2 { font-size: 1.5em; color: var(--arena); }
+  .geo {
+    position: absolute; width: 120px; height: 120px;
+    background: var(--gradiente); opacity: 0.6; border-radius: 50%;
+    animation: spin 10s linear infinite;
+  }
+  @keyframes spin {
+    from {transform: rotate(0deg);} to {transform: rotate(360deg);}
+  }
+  .controls { position: absolute; bottom: 20px; width: 100%; text-align: center; }
+  button { background: var(--gradiente); border: none; color: #fff; padding: 10px 20px; font-size: 1em; cursor: pointer; border-radius: 20px; }
+  button:hover { opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<div class="slide active" style="background: var(--gradiente);">
+  <h1>Whole Earth Catalog</h1>
+  <h2>y los orígenes de la cibernética en Estados Unidos</h2>
+</div>
+
+<div class="slide" style="background: var(--turquesa);">
+  <h1>Cibernética del pliegue</h1>
+  <h2>La paradoja del observador en el sistema.</h2>
+</div>
+
+<div class="slide" style="background: var(--magenta);">
+  <h1>La cibernética de la cibernética</h1>
+  <h2>Mead, Bateson y la reflexividad del observador.</h2>
+</div>
+
+<div class="slide" style="background: var(--mostaza); color:#222;">
+  <h1>El Whole Earth Catalog</h1>
+  <h2>Un artefacto cibernético y comunitario.</h2>
+</div>
+
+<div class="slide" style="background: var(--azulvioleta);">
+  <h1>Del qué-hacer al cómo-hacer</h1>
+  <h2>De la contracultura al bricolaje reflexivo.</h2>
+</div>
+
+<div class="slide" style="background: var(--turquesa);">
+  <h1>El cómo-hacer como episteme</h1>
+  <h2>Swidler y la cultura como caja de herramientas.</h2>
+</div>
+
+<div class="slide" style="background: var(--magenta);">
+  <h1>Saber-hacer encarnado</h1>
+  <h2>Varela y la enacción del conocimiento.</h2>
+</div>
+
+<div class="slide" style="background: var(--mostaza); color:#222;">
+  <h1>Tres olas de la cibernética</h1>
+  <h2>De Wiener a Hayles: del control a la materialidad distribuida.</h2>
+</div>
+
+<div class="slide" style="background: var(--azulvioleta);">
+  <h1>De la contracultura a la cibercultura</h1>
+  <h2>Brand, The WELL y la utopía digital.</h2>
+</div>
+
+<div class="slide" style="background: var(--turquesa);">
+  <h1>¿Cómo habitar un sistema?</h1>
+  <h2>El conocimiento como modo de estar y transformar.</h2>
+</div>
+
+<div class="slide" style="background: var(--gradiente);">
+  <h1>Fin</h1>
+  <h2>Jorge Cardiel Herrera · 2025</h2>
+</div>
+
+<div class="controls">
+  <button onclick="prevSlide()">⟵ Anterior</button>
+  <button onclick="nextSlide()">Siguiente ⟶</button>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+function showSlide(index){
+  slides.forEach(s => s.classList.remove('active'));
+  slides[index].classList.add('active');
+  addGeometry();
+}
+function nextSlide(){ current = (current + 1) % slides.length; showSlide(current); }
+function prevSlide(){ current = (current - 1 + slides.length) % slides.length; showSlide(current); }
+document.addEventListener('keydown', e => {
+  if(e.key==='ArrowRight') nextSlide();
+  if(e.key==='ArrowLeft') prevSlide();
+});
+function addGeometry(){
+  document.querySelectorAll('.geo').forEach(g => g.remove());
+  const slide = slides[current];
+  for(let i=0;i<4;i++){
+    const geo = document.createElement('div');
+    geo.className='geo';
+    geo.style.left = Math.random()*80+'%';
+    geo.style.top = Math.random()*70+'%';
+    geo.style.animationDuration = (8+Math.random()*5)+'s';
+    slide.appendChild(geo);
+  }
+}
+addGeometry();
+</script>
+
+</body>
+</html>
