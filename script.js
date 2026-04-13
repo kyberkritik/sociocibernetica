@@ -21,6 +21,7 @@ const TICKER_QUESTIONS = [
 // Drawer state
 let drawerOpen = false;
 let drawerIframeLoaded = false;
+let classicCusdisLoaded = false;
 
 function openCommentsDrawer() {
     drawerOpen = true;
@@ -168,22 +169,37 @@ function buildTickerWithComments(comments) {
     track.appendChild(wrap2);
 }
 
+// Garantiza que el embed clásico de Cusdis esté inicializado
+function ensureClassicCusdis() {
+    if (classicCusdisLoaded) return;
+    const el = document.getElementById('cusdis_thread');
+    if (!el) return;
+    // Si el script ya inyectó un iframe, no hacemos nada
+    if (el.querySelector('iframe')) {
+        classicCusdisLoaded = true;
+        return;
+    }
+    el.dataset.pageUrl = window.location.href;
+    renderCusdisWhenReady(el);
+    classicCusdisLoaded = true;
+}
+
 function scrollToClassicComments() {
     const videoSec = document.getElementById('video-section');
     const classic  = document.getElementById('comments-classic-section');
     if (!classic) return;
 
-    // If video section is not shown, switch to it first
     if (!videoSec || videoSec.style.display === 'none') {
         showSection('video');
     }
 
     closeCommentsDrawer();
 
-    // Small delay to let section render before scrolling
+    // Asegurar que Cusdis esté cargado y luego hacer scroll
     setTimeout(() => {
+        ensureClassicCusdis();
         classic.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 150);
+    }, 200);
 }
 
 // ===================================================
@@ -206,6 +222,8 @@ function showSection(section) {
         videoSec.style.display = 'block';
         document.body.style.overflow = 'hidden'; // the section itself scrolls
         videoSec.scrollTop = 0;
+        // Inicializar Cusdis clásico si aún no está listo
+        setTimeout(ensureClassicCusdis, 300);
     } else if (section === 'presentation') {
         presentSec.style.display = 'block';
         document.body.style.overflow = 'hidden';
