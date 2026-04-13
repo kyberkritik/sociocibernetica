@@ -56,7 +56,7 @@
         <div class="drawer-header">
             <div class="drawer-header-text">
                 <strong>Comentarios</strong>
-                <p>Ponencia: Dr. Jorge Cardiel Herrera · Sociocibernética</p>
+                <p>Ponencia: Jorge Cardiel · Sociocibernética</p>
             </div>
             <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Cerrar panel de comentarios">✕</button>
         </div>
@@ -74,7 +74,7 @@
                 data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
                 data-page-id="sociocibernetica-jorge-cardiel-2025"
                 data-page-url=""
-                data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
+                data-page-title="Sociocibernética — Ponencia Jorge Cardiel"
                 data-theme="dark"
             ></div>
         </div>
@@ -103,7 +103,7 @@
                 <button class="choice-btn choice-video" onclick="showSection('video')">
                     <span class="choice-icon">▶</span>
                     <span class="choice-label">Ver Video</span>
-                    <span class="choice-desc">Ponencia de Jorge Cardiel Herrera</span>
+                    <span class="choice-desc">Ponencia de Jorge Cardiel</span>
                 </button>
             </div>
         </div>
@@ -111,6 +111,10 @@
             <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
                 <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
             </svg>
+        </div>
+        <div class="landing-footer">
+            &copy; 2026 ·
+            <a href="https://github.com/kyberkritik/sociocibernetica" target="_blank" rel="noopener noreferrer">Jorge Cardiel (kyberkritik)</a>
         </div>
     </div>
 
@@ -132,9 +136,9 @@
             <div class="video-header">
                 <div class="video-badge">Clip · Presentación</div>
                 <h1 class="video-title">Conceptos Clave de la Sociocibernética</h1>
-                <p class="video-speaker">Dr. Jorge Cardiel Herrera</p>
+                <p class="video-speaker">Jorge Cardiel</p>
                 <p class="video-context">
-                    Esta es la ponencia de Jorge Cardiel Herrera dentro del
+                    Esta es la ponencia de Jorge Cardiel dentro del
                     <strong>Seminario de Sociocibernética Crítica Aplicada al Estudio de América del Norte</strong>,
                     transmitida el 17 de octubre de 2025. El clip cubre únicamente su presentación;
                     el evento completo incluye otras ponencias y discusión grupal.
@@ -151,7 +155,7 @@
                     class="video-embed"
                     allow="autoplay"
                     allowfullscreen
-                    title="Ponencia: Conceptos Clave de la Sociocibernética — Dr. Jorge Cardiel Herrera"
+                    title="Ponencia: Conceptos Clave de la Sociocibernética — Jorge Cardiel"
                 ></iframe>
             </div>
 
@@ -229,12 +233,20 @@
 
             <!-- Transcripción completa -->
             <section class="video-transcript">
-                <h2 class="section-title">Transcripción completa</h2>
+                <button class="transcript-toggle" id="transcript-toggle" type="button" aria-expanded="false" aria-controls="transcript-content">
+                    <span class="transcript-toggle-label">
+                        <span class="section-title" style="margin:0">Transcripción completa</span>
+                        <span class="transcript-toggle-hint">Toca para desplegar</span>
+                    </span>
+                    <span class="transcript-chevron" aria-hidden="true">▾</span>
+                </button>
+
+                <div class="transcript-content" id="transcript-content" hidden>
                 <p class="transcript-note">Transcripción generada a partir de los subtítulos del clip. Editada para legibilidad; el tiempo de referencia indica el minuto aproximado en el video.</p>
 
                 <div class="transcript-block">
                     <div class="transcript-speaker moderador">Moderador (Juan Manuel)</div>
-                    <p>Muchísimas gracias. Entonces, a continuación quisiera ahora presentar al Dr. Jorge Cardiel Herrera. Quiero decir que es muy importante señalar y reconocer que dentro del seminario de sociocibernética, de lo poco que entendemos, alguien que nos puede guiar y que nos puede aclarar nuestros puntos de vista, siempre es el doctor Jorge nos orienta porque cuando ya estamos muy confundidos y nos empieza a salir humo de la cabeza, Jorge es el que nos puede dar un norte. Entonces, muy muy contentos de estar aquí y bueno, adelante para que puedas empezar con tu ponencia.</p>
+                    <p>Muchísimas gracias. Entonces, a continuación quisiera ahora presentar a Jorge Cardiel. Quiero decir que es muy importante señalar y reconocer que dentro del seminario de sociocibernética, de lo poco que entendemos, alguien que nos puede guiar y que nos puede aclarar nuestros puntos de vista, siempre es Jorge quien nos orienta porque cuando ya estamos muy confundidos y nos empieza a salir humo de la cabeza, Jorge es el que nos puede dar un norte. Entonces, muy muy contentos de estar aquí y bueno, adelante para que puedas empezar con tu ponencia.</p>
                 </div>
 
                 <div class="transcript-block">
@@ -259,6 +271,7 @@
                     <div class="transcript-speaker moderador">Moderador (Juan Manuel) <span class="ts">[~11:09]</span></div>
                     <p>No, muchísimas gracias, Jorge. En la parte de esto, muy interesante porque siempre nos confunde y queremos ver: ¿la autopoiesis existe, no existe? ¿Esta retroalimentación de los sistemas y la parte concreta de cómo se ajustan: es la mano invisible, o lo que dicen los franceses —el <em>laissez-faire</em>, o lo que dicen los politólogos gringos —el <em>self-regulation</em>— o puede ser algo que no sabemos cómo esos sistemas se van ajustando? Siempre seguimos reflexionando sobre eso. Y muchísimas gracias, Jorge, por darnos estas perspectivas en el ámbito del constructivismo y la teoría crítica, que nos siguen alimentando en la parte del debate.</p>
                 </div>
+                </div><!-- /.transcript-content -->
             </section>
 
             <!-- Comentarios estilo blog clásico -->
@@ -276,12 +289,20 @@
                         data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
                         data-page-id="sociocibernetica-jorge-cardiel-2025"
                         data-page-url=""
-                        data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
+                        data-page-title="Sociocibernética — Ponencia Jorge Cardiel"
                         data-theme="dark"
                     ></div>
                 </div>
                 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
             </section>
+
+            <footer class="site-footer">
+                <p>
+                    &copy; <span id="footer-year">2026</span> ·
+                    <a href="https://github.com/kyberkritik/sociocibernetica" target="_blank" rel="noopener noreferrer">Jorge Cardiel (kyberkritik)</a>
+                </p>
+                <p class="footer-sub">Seminario de Sociocibernética Crítica · Código abierto en GitHub</p>
+            </footer>
 
         </div><!-- /.video-main -->
     </div><!-- /#video-section -->

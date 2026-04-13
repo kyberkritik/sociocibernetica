@@ -4,7 +4,7 @@
 const CUSDIS_HOST      = 'https://cusdis.com';
 const CUSDIS_APP_ID    = '27a523d7-444b-4fb4-8538-a4d952a61dd1';
 const CUSDIS_PAGE_ID   = 'sociocibernetica-jorge-cardiel-2025';
-const CUSDIS_PAGE_TITLE = 'Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera';
+const CUSDIS_PAGE_TITLE = 'Sociocibernética — Ponencia Jorge Cardiel';
 
 // Preguntas de debate para el ticker (fallback si no hay comentarios)
 const TICKER_QUESTIONS = [
@@ -284,7 +284,45 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeKeyboardNavigation();
     // Swipe & wheel only affect presentation when active
     initializeSwipeGestures();
+    initTranscriptToggle();
+    initFooterYear();
 });
+
+// ===================================================
+// TRANSCRIPT COLLAPSIBLE TOGGLE
+// ===================================================
+function initTranscriptToggle() {
+    const btn = document.getElementById('transcript-toggle');
+    const content = document.getElementById('transcript-content');
+    if (!btn || !content) return;
+
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const newState = !expanded;
+        btn.setAttribute('aria-expanded', String(newState));
+        if (newState) {
+            content.hidden = false;
+            // force reflow then animate
+            requestAnimationFrame(() => content.classList.add('open'));
+            const hint = btn.querySelector('.transcript-toggle-hint');
+            if (hint) hint.textContent = 'Toca para plegar';
+        } else {
+            content.classList.remove('open');
+            // keep hidden attribute off until collapse anim ends? Easier: toggle hidden immediately
+            content.hidden = true;
+            const hint = btn.querySelector('.transcript-toggle-hint');
+            if (hint) hint.textContent = 'Toca para desplegar';
+        }
+    });
+}
+
+// ===================================================
+// FOOTER YEAR (auto)
+// ===================================================
+function initFooterYear() {
+    const el = document.getElementById('footer-year');
+    if (el) el.textContent = String(new Date().getFullYear());
+}
 
 // Navigation Functions
 function nextSlide() {
