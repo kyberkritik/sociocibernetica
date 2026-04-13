@@ -7,382 +7,573 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="presentation-container">
-        <!-- Slide 1: Portada -->
-        <div class="slide active" data-slide="1">
-            <div class="geometric-bg">
-                <div class="circle circle-1"></div>
-                <div class="circle circle-2"></div>
-                <div class="circle circle-3"></div>
-            </div>
-            <h1 class="main-title">SOCIOCIBERNÉTICA</h1>
-            <h2 class="subtitle">Sistemas, Comunicación, Control, Emergencia, Retroalimentación</h2>
-            <div class="wave-container">
-                <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
-                </svg>
+
+    <!-- ================================================
+         PANTALLA DE SELECCIÓN
+    ================================================ -->
+    <div id="landing-page" class="landing-page">
+        <div class="landing-bg">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        <div class="landing-content">
+            <h1 class="landing-title">SOCIOCIBERNÉTICA</h1>
+            <p class="landing-subtitle">Seminario de Sociocibernética Crítica<br>Aplicada al Estudio de América del Norte</p>
+            <p class="landing-date">17 de octubre de 2025</p>
+            <div class="landing-choices">
+                <button class="choice-btn choice-slides" onclick="showSection('presentation')">
+                    <span class="choice-icon">⎋</span>
+                    <span class="choice-label">Ver Presentación</span>
+                    <span class="choice-desc">Diapositivas interactivas</span>
+                </button>
+                <button class="choice-btn choice-video" onclick="showSection('video')">
+                    <span class="choice-icon">▶</span>
+                    <span class="choice-label">Ver Video</span>
+                    <span class="choice-desc">Ponencia de Jorge Cardiel Herrera</span>
+                </button>
             </div>
         </div>
+        <div class="wave-container landing-wave">
+            <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+                <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
+            </svg>
+        </div>
+    </div>
 
-        <!-- Slide 2: ¿Qué es la Cibernética? -->
-        <div class="slide" data-slide="2">
-            <div class="geometric-bg">
-                <div class="square square-1"></div>
-                <div class="square square-2"></div>
+    <!-- ================================================
+         SECCIÓN DE VIDEO
+    ================================================ -->
+    <div id="video-section" class="video-section" style="display:none">
+        <div class="video-top-bar">
+            <button class="back-btn" onclick="showSection('landing')">← Volver</button>
+            <span class="video-top-title">Sociocibernética · Ponencia</span>
+            <a class="full-video-link" href="https://www.youtube.com/live/9tWTiv0s5ag?si=ZT8k1AqswKXTkWui" target="_blank" rel="noopener noreferrer">
+                Ver video completo ↗
+            </a>
+        </div>
+
+        <div class="video-main">
+
+            <!-- Encabezado del clip -->
+            <div class="video-header">
+                <div class="video-badge">Clip · Presentación</div>
+                <h1 class="video-title">Conceptos Clave de la Sociocibernética</h1>
+                <p class="video-speaker">Dr. Jorge Cardiel Herrera</p>
+                <p class="video-context">
+                    Esta es la ponencia del Dr. Jorge Cardiel Herrera dentro del
+                    <strong>Seminario de Sociocibernética Crítica Aplicada al Estudio de América del Norte</strong>,
+                    transmitida el 17 de octubre de 2025. El clip cubre únicamente su presentación;
+                    el evento completo incluye otras ponencias y discusión grupal.
+                </p>
+                <a class="full-video-btn" href="https://www.youtube.com/live/9tWTiv0s5ag?si=ZT8k1AqswKXTkWui" target="_blank" rel="noopener noreferrer">
+                    Ver transmisión completa en YouTube ↗
+                </a>
             </div>
-            <h2 class="slide-title">¿Qué es la Cibernética?</h2>
-            <div class="content-box">
-                <div class="icon-container">
-                    <svg class="feedback-loop" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="80" class="loop-circle"/>
-                        <path d="M180,100 L160,90 L160,110 Z" class="arrow"/>
+
+            <!-- Embed de video -->
+            <div class="video-embed-wrapper">
+                <iframe
+                    src="https://drive.google.com/file/d/1E5vfxvv0hOSLGfsO4Sf1q7HVnRPqw-mY/preview"
+                    class="video-embed"
+                    allow="autoplay"
+                    allowfullscreen
+                    title="Ponencia: Conceptos Clave de la Sociocibernética — Dr. Jorge Cardiel Herrera"
+                ></iframe>
+            </div>
+
+            <!-- Puntos a destacar -->
+            <section class="video-highlights">
+                <h2 class="section-title">Puntos a destacar</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-num">01</div>
+                        <h3>Cibernética: control y comunicación</h3>
+                        <p>Wiener planteó que control <em>es</em> comunicación y comunicación <em>es</em> control: son formas de coordinación que emergen en la dinámica y evolución de los sistemas.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-num">02</div>
+                        <h3>El observador modifica el sistema</h3>
+                        <p>La sociocibernética de segunda generación reconoce que el acto de observar no es neutral: los observadores redefinen y modifican los sistemas al estudiarlos.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-num">03</div>
+                        <h3>Von Foerster: <em>Observing Systems</em></h3>
+                        <p>El título de Heinz von Foerster juega con ambos sentidos: observadores que estudian sistemas <em>y</em> sistemas que son capaces de observar. Se rompe así la ilusión de objetividad.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-num">04</div>
+                        <h3>Constructivismo y ética</h3>
+                        <p>Al reconocer que nuestras descripciones de la realidad la modifican, emerge una dimensión ética del observador: quien describe también construye la definición de la situación.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-num">05</div>
+                        <h3>Autopoiesis y su debate</h3>
+                        <p>Maturana, Varela y Luhmann coinciden en que los sistemas se autoproducen, pero hay tensión entre autorregulación pura ("mano invisible") y la autoorganización con actores situados.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-num">06</div>
+                        <h3>Sociocibernética crítica</h3>
+                        <p>Para evitar tecnocracia y reduccionismo, el seminario combina tres ejes: constructivismo epistemológico, teoría crítica (análisis de poder y emancipación) e investigación situada (Donna Haraway / IAP).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preguntas para reflexión -->
+            <section class="video-questions">
+                <h2 class="section-title">Preguntas para reflexión y debate</h2>
+                <ol class="questions-list">
+                    <li>
+                        <span class="q-label">Conceptual</span>
+                        ¿En qué se diferencia la cibernética de primera orden (Wiener) de la sociocibernética de segunda orden? ¿Qué cambia en la relación entre observador y sistema?
+                    </li>
+                    <li>
+                        <span class="q-label">Epistemológico</span>
+                        Si toda observación está situada (von Foerster, Haraway), ¿es posible producir conocimiento generalizable sobre sistemas sociales? ¿Cómo se resuelve esa tensión?
+                    </li>
+                    <li>
+                        <span class="q-label">Ético</span>
+                        ¿Qué responsabilidades éticas implica el constructivismo radical para quien investiga fenómenos sociales?
+                    </li>
+                    <li>
+                        <span class="q-label">Teórico</span>
+                        Luhmann excluye lo biológico y psíquico del sistema social, dejándolos como "condición de posibilidad". ¿Es esa exclusión analíticamente útil o un problema? ¿Qué se pierde?
+                    </li>
+                    <li>
+                        <span class="q-label">Aplicado</span>
+                        Cardiel menciona que la autopoiesis puede interpretarse como la "mano invisible". ¿En qué contextos esa analogía es productiva y en cuáles puede ser engañosa?
+                    </li>
+                    <li>
+                        <span class="q-label">Crítico</span>
+                        ¿Cómo puede la sociocibernética crítica —que busca "llevar sistemas a estados más deseables"— evitar caer ella misma en una posición tecnocrática?
+                    </li>
+                    <li>
+                        <span class="q-label">Metodológico</span>
+                        ¿Qué aporta la Investigación-Acción Participativa (IAP) a la sociocibernética? ¿En qué proyectos podría articularse?
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Transcripción completa -->
+            <section class="video-transcript">
+                <h2 class="section-title">Transcripción completa</h2>
+                <p class="transcript-note">Transcripción generada a partir de los subtítulos del clip. Editada para legibilidad; el tiempo de referencia indica el minuto aproximado en el video.</p>
+
+                <div class="transcript-block">
+                    <div class="transcript-speaker moderador">Moderador (Juan Manuel)</div>
+                    <p>Muchísimas gracias. Entonces, a continuación quisiera ahora presentar al Dr. Jorge Cardiel Herrera. Quiero decir que es muy importante señalar y reconocer que dentro del seminario de sociocibernética, de lo poco que entendemos, alguien que nos puede guiar y que nos puede aclarar nuestros puntos de vista, siempre es el doctor Jorge nos orienta porque cuando ya estamos muy confundidos y nos empieza a salir humo de la cabeza, Jorge es el que nos puede dar un norte. Entonces, muy muy contentos de estar aquí y bueno, adelante para que puedas empezar con tu ponencia.</p>
+                </div>
+
+                <div class="transcript-block">
+                    <div class="transcript-speaker jorge">Dr. Jorge Cardiel Herrera <span class="ts">[~1:12]</span></div>
+                    <p>Muchas gracias, Juan Manuel. Bueno, me alejo un poco. Muchas gracias. Me da mucho gusto estar aquí. Muchas gracias, Cintia, por organizar y bueno, por esta oportunidad.</p>
+                    <p>Y bueno, vamos rápido para ver solo un par de cuestiones que hemos discutido. Afortunadamente pues ya tenemos pues sí, más de dos años —me parece que tres años con el seminario— y bueno, ya escucharon al principio al Dr. Juan Carlos Barrón y pues sí, seis años, ¿verdad? Ya me perdí en el tiempo, desde 2019 por lo menos. Los años de la pandemia ahí muy bien. Pero bueno, les puse ahí algunos conceptos que creo que son clave.</p>
+                    <p>Escucharon ahorita ya cómo se pueden aplicar en varios de nuestros casos de estudio que hemos tenido: emergencia —muy importante— también retroalimentación. Ahorita nos dio un ejemplo fabuloso Argelia de lo que es un bucle, o un loop, de retroalimentación positiva. Y pues también lo que hemos tratado de hacer es, por supuesto, romper esta idea de que todo es absolutamente autorregulación. Realmente ahí está parte de la cuestión crítica que se suma. No traje mucho de teoría crítica, traje más de sociocibernética, pero bueno, la idea del seminario ha sido siempre estar en ambos puntos, es decir: la sociocibernética, teoría de sistemas, y también la teoría crítica, que seguramente ya conocen —hay unos libros enormes de todos los autores de esta tradición.</p>
+                    <p>Pero bueno, ¿qué sería la cibernética? Regresando: esta ciencia del control, de la comunicación. Incluso muchos autores clásicos pues lo equiparan, como que dicen: "El control es comunicación y la comunicación es control." Es decir, estamos hablando de formas de coordinación que muchas veces ocurren de manera en la dinámica, en la evolución de los sistemas. Entonces, bueno, esa sería nuestra primera definición de Norbert Wiener.</p>
+                    <p>Y después ya pasamos a esta parte donde ya distinguimos: ahora la sociocibernética ya es una segunda generación, más allá de esta idea de estudiar sistemas, cómo se gobiernan los sistemas. Ahora estudiamos cómo también los observadores que observan sistemas los están modificando. Es decir, su acción de observación también los redefine, los va modificando. Y pues ahí está ya uno de los clásicos, se mencionó hace ratito, lo mencionó Amílcar: von Foerster y su <em>Observing Systems</em>, que es un título que usa ambos sentidos en inglés: observadores observando sistemas, y sistemas que observan. Ambas acepciones.</p>
+                    <p>Entonces, bueno, ahí tenemos una distinción importante: cómo se rompe con esta ilusión de la objetividad. Ahí empieza esta idea del constructivismo, que también nos hace pensar pues en una dimensión ética del observador, como que sus descripciones de la realidad también modifican o cambian la definición de la situación, de la realidad.</p>
+                    <p>Algunos hitos pues fueron por supuesto el Biological Computer Laboratory y las Macy conferences —las conferencias Macy— donde se discutió mucho de esto también con figuras como Margaret Mead y Gregory Bateson, que también dieron un giro antropológico y contribuyeron mucho a esta idea de no solo analizar sistemas, sino también observadores que ven sistemas.</p>
+                    <p>Y bueno, ahí hay una parte muy crítica —aunque no están en la tradición de la teoría crítica— que es precisamente cuestionar esta idea del observador omnisciente, es decir, que hubiera un observador que pudiera describir desde fuera. Ahora también se podría decir con otras corrientes, por ejemplo, con Donna Haraway, lo de la investigación situada: la observación siempre parte desde un punto de vista, desde donde estamos ubicados. Y pues sí, quizá no es el hilo negro, pero sí hay paralelos. Esta crítica tiene muchas correspondencias en otras disciplinas como la antropología, pero sí es una manera de vincularlo con la teoría de sistemas, es decir: quitar esta idea de la primera cibernética donde el observador está afuera, hace su esquema y esas son las reglas definidas. No: también el punto de vista aparece.</p>
+                    <p>Y bueno, aquí ya llegamos a un concepto que nos ha tenido discutiendo —y no solo a nosotros, sino a varios grupos— que es el de la <strong>autopoiesis</strong>. Creo que una de las cosas que más hemos discutido es precisamente su correlato: si es, por decirlo así, como la mano invisible, o si esta autoorganización de los sistemas económicos o sociales realmente cómo opera, o si solo podemos hablar de autoorganización. Esa es una de las discusiones que todavía hemos tenido.</p>
+                    <p>Para señalar de dónde viene: viene sobre todo de los postulados de Maturana y Varela, y cómo los trabajó Luhmann con su cuestión de sistemas sociales. Para él, su idea era que los sistemas sociales solo eran operaciones —comunicaciones— que interactúan entre sí, dejando fuera la parte biológica y la parte psíquica. Es decir, estaba la parte psíquica como condición de posibilidad, pero no como parte de su análisis. Esas son ideas que también hemos estado discutiendo y que la verdad estamos más que dispuestos a tomar distintas soluciones, es decir, también estos postulados base pues los estamos interpelando con las investigaciones que hacemos.</p>
+                    <p>Pero bueno, vemos estas interacciones —eso es muy importante— las interacciones y las dinámicas. Y eso de Luhmann, que era la distinción entre sistema y entorno: pues sí, no hemos llegado todavía a un punto definitivo, ni creo que tenga sentido para cada investigación que se haga. Es una de las cosas que les quisiera proponer.</p>
+                    <p>Y bueno, pero es muy importante también la complejidad y la reducción de su complejidad, y pues algunas líneas que se pueden tomar, que se han tomado. Porque creo que suena como una disciplina un poco esotérica ahora en 2025, pero en realidad está muy presente. Si vemos, por ejemplo, lo de la gobernanza, se vincula muchísimo con este estudio de la sociocibernética, de los sistemas. Si vemos lo de la sostenibilidad también: concretamente, si vemos cualquier trabajo sobre sostenibilidad, pues hay referencias a ideas precisamente como bucles de retroalimentación positiva y negativa, emergencia, efectos de red, etcétera. Entonces tenemos, por supuesto, esas líneas y también tenemos algunas que todavía podemos desarrollar, como son la epistemología y el constructivismo.</p>
+                    <p>Algunas críticas que sí hay que señalar, y lo que trata de corregir esta idea de la sociocibernética crítica: son estos riesgos, como de tecnocracia, de reduccionismo o despersonalización. Es decir, estar describiendo todo como dinámicas de sistemas podría tener esa vía, y la ha tenido en varios momentos. Pero bueno, ante eso pues les hemos propuesto precisamente en el seminario estos ejes: el constructivismo epistemológico —el reconocimiento del observador—; la teoría crítica —por supuesto análisis de poder, cómo hacer estas transformaciones deseables, cómo llevar a los sistemas a estados más deseables que puedan funcionar de una manera más distribuida, con más justicia, con emancipación—; pero también la investigación situada, que tenemos precisamente como praxis que va a transformar. También está el vínculo con la IAP, con la investigación acción participativa. Y bueno, tenemos ahí muy prometedor lo que se puede hacer en esta síntesis.</p>
+                    <p>Y bueno, les agradezco mucho, me fui lo más rápido que pude. Gracias.</p>
+                </div>
+
+                <div class="transcript-block">
+                    <div class="transcript-speaker moderador">Moderador (Juan Manuel) <span class="ts">[~11:09]</span></div>
+                    <p>No, muchísimas gracias, Jorge. En la parte de esto, muy interesante porque siempre nos confunde y queremos ver: ¿la autopoiesis existe, no existe? ¿Esta retroalimentación de los sistemas y la parte concreta de cómo se ajustan: es la mano invisible, o lo que dicen los franceses —el <em>laissez-faire</em>, o lo que dicen los politólogos gringos —el <em>self-regulation</em>— o puede ser algo que no sabemos cómo esos sistemas se van ajustando? Siempre seguimos reflexionando sobre eso. Y muchísimas gracias, Jorge, por darnos estas perspectivas en el ámbito del constructivismo y la teoría crítica, que nos siguen alimentando en la parte del debate.</p>
+                </div>
+            </section>
+
+        </div><!-- /.video-main -->
+    </div><!-- /#video-section -->
+
+    <!-- ================================================
+         SECCIÓN DE PRESENTACIÓN
+    ================================================ -->
+    <div id="presentation-section" style="display:none">
+        <button class="back-btn presentation-back" onclick="showSection('landing')">← Volver</button>
+
+        <div class="presentation-container">
+            <!-- Slide 1: Portada -->
+            <div class="slide active" data-slide="1">
+                <div class="geometric-bg">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+                <h1 class="main-title">SOCIOCIBERNÉTICA</h1>
+                <h2 class="subtitle">Sistemas, Comunicación, Control, Emergencia, Retroalimentación</h2>
+                <div class="wave-container">
+                    <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
                     </svg>
                 </div>
-                <ul class="bullet-list">
-                    <li>Ciencia del control y comunicación</li>
-                    <li>En animales y máquinas</li>
-                    <li>Retroalimentación y autorregulación</li>
-                    <li>Fundada por Norbert Wiener (1948)</li>
-                </ul>
             </div>
-        </div>
 
-        <!-- Slide 3: Orden Cibernético -->
-        <div class="slide" data-slide="3">
-            <div class="geometric-bg">
-                <div class="triangle triangle-1"></div>
-                <div class="triangle triangle-2"></div>
-            </div>
-            <h2 class="slide-title">Primer y Segundo Orden</h2>
-            <div class="split-content">
-                <div class="content-half">
-                    <h3>Primera Orden</h3>
-                    <div class="diagram-box">
-                        <svg viewBox="0 0 200 150">
-                            <rect x="50" y="50" width="100" height="50" class="system-box"/>
-                            <path d="M50,75 L20,75 L20,25 L150,25 L150,50" class="feedback-arrow"/>
+            <!-- Slide 2: ¿Qué es la Cibernética? -->
+            <div class="slide" data-slide="2">
+                <div class="geometric-bg">
+                    <div class="square square-1"></div>
+                    <div class="square square-2"></div>
+                </div>
+                <h2 class="slide-title">¿Qué es la Cibernética?</h2>
+                <div class="content-box">
+                    <div class="icon-container">
+                        <svg class="feedback-loop" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="80" class="loop-circle"/>
+                            <path d="M180,100 L160,90 L160,110 Z" class="arrow"/>
                         </svg>
                     </div>
-                    <p>Sistemas observados</p>
-                    <p>Objetividad externa</p>
+                    <ul class="bullet-list">
+                        <li>Ciencia del control y comunicación</li>
+                        <li>En animales y máquinas</li>
+                        <li>Retroalimentación y autorregulación</li>
+                        <li>Fundada por Norbert Wiener (1948)</li>
+                    </ul>
                 </div>
-                <div class="content-half">
-                    <h3>Segundo Orden</h3>
-                    <p>Observadores observantes-observados</p>
-                    <p><em>Observing systems</em></p>
-                    <p>Observadores que se observan entre sí</p>
-                    <div class="diagram-box">
-                        <svg viewBox="0 0 200 150">
-                            <circle cx="100" cy="75" r="40" class="observer-circle"/>
-                            <circle cx="100" cy="75" r="60" class="system-circle"/>
-                            <path d="M100,15 L110,25 L90,25 Z" class="reflect-arrow"/>
+            </div>
+
+            <!-- Slide 3: Orden Cibernético -->
+            <div class="slide" data-slide="3">
+                <div class="geometric-bg">
+                    <div class="triangle triangle-1"></div>
+                    <div class="triangle triangle-2"></div>
+                </div>
+                <h2 class="slide-title">Primer y Segundo Orden</h2>
+                <div class="split-content">
+                    <div class="content-half">
+                        <h3>Primera Orden</h3>
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 200 150">
+                                <rect x="50" y="50" width="100" height="50" class="system-box"/>
+                                <path d="M50,75 L20,75 L20,25 L150,25 L150,50" class="feedback-arrow"/>
+                            </svg>
+                        </div>
+                        <p>Sistemas observados</p>
+                        <p>Objetividad externa</p>
+                    </div>
+                    <div class="content-half">
+                        <h3>Segundo Orden</h3>
+                        <p>Observadores observantes-observados</p>
+                        <p><em>Observing systems</em></p>
+                        <p>Observadores que se observan entre sí</p>
+                        <div class="diagram-box">
+                            <svg viewBox="0 0 200 150">
+                                <circle cx="100" cy="75" r="40" class="observer-circle"/>
+                                <circle cx="100" cy="75" r="60" class="system-circle"/>
+                                <path d="M100,15 L110,25 L90,25 Z" class="reflect-arrow"/>
+                            </svg>
+                        </div>
+                        <p>Observadores incluidos</p>
+                        <p>Autorreferencialidad</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Heinz von Foerster -->
+            <div class="slide" data-slide="4">
+                <div class="geometric-bg">
+                    <div class="hexagon hexagon-1"></div>
+                    <div class="hexagon hexagon-2"></div>
+                </div>
+                <h2 class="slide-title">Heinz von Foerster</h2>
+                <div class="content-box">
+                    <div class="quote-container">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text">La objetividad es la ilusión de que las observaciones pueden hacerse sin un observador</p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Cibernética de segundo orden</li>
+                        <li>Sistemas autopoiéticos</li>
+                        <li>Constructivismo radical</li>
+                        <li>Biological Computer Laboratory</li>
+                        <li>Influencia en ciencias sociales y epistemología</li>
+                        <li>Ética del observador</li>
+                        <li>Macy Conferences</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 5: Autopoiesis -->
+            <div class="slide" data-slide="5">
+                <div class="geometric-bg">
+                    <div class="spiral spiral-1"></div>
+                </div>
+                <h2 class="slide-title">Autopoiesis</h2>
+                <div class="content-box">
+                    <div class="autopoiesis-diagram">
+                        <svg viewBox="0 0 300 300">
+                            <circle cx="150" cy="150" r="100" class="cell-membrane"/>
+                            <circle cx="150" cy="150" r="70" class="cell-inner"/>
+                            <circle cx="120" cy="130" r="15" class="component"/>
+                            <circle cx="180" cy="130" r="15" class="component"/>
+                            <circle cx="150" cy="170" r="15" class="component"/>
+                            <path d="M150,50 L140,70 L160,70 Z" class="production-arrow"/>
                         </svg>
                     </div>
-                    <p>Observadores incluidos</p>
-                    <p>Autorreferencialidad</p>
+                    <p class="definition">Auto-producción y auto-organización</p>
+                    <ul class="bullet-list">
+                        <li>Maturana y Varela</li>
+                        <li>Sistemas vivos se producen a sí mismos</li>
+                        <li>Clausura operacional</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- Slide 4: Heinz von Foerster -->
-        <div class="slide" data-slide="4">
-            <div class="geometric-bg">
-                <div class="hexagon hexagon-1"></div>
-                <div class="hexagon hexagon-2"></div>
-            </div>
-            <h2 class="slide-title">Heinz von Foerster</h2>
-            <div class="content-box">
-                <div class="quote-container">
-                    <div class="quote-mark">"</div>
-                    <p class="quote-text">La objetividad es la ilusión de que las observaciones pueden hacerse sin un observador</p>
+            <!-- Slide 6: Comunicación y Sociedad -->
+            <div class="slide" data-slide="6">
+                <div class="geometric-bg">
+                    <div class="network-node node-1"></div>
+                    <div class="network-node node-2"></div>
+                    <div class="network-node node-3"></div>
+                    <div class="network-line line-1"></div>
+                    <div class="network-line line-2"></div>
                 </div>
-                <ul class="bullet-list">
-                    <li>Cibernética de segundo orden</li>
-                    <li>Sistemas autopoiéticos</li>
-                    <li>Constructivismo radical</li>
-                    <li>Biological Computer Laboratory</li>
-                    <li>Influencia en ciencias sociales y epistemología</li>
-                    <li>Ética del observador</li>
-                    <li>Macy Conferences</li>
-                </ul>
+                <h2 class="slide-title">Comunicación y Sociedad</h2>
+                <div class="content-box">
+                    <div class="communication-diagram">
+                        <svg viewBox="0 0 400 200">
+                            <circle cx="80" cy="100" r="40" class="node"/>
+                            <circle cx="200" cy="100" r="40" class="node"/>
+                            <circle cx="320" cy="100" r="40" class="node"/>
+                            <path d="M120,100 L160,100" class="connection"/>
+                            <path d="M240,100 L280,100" class="connection"/>
+                            <text x="140" y="95" class="label">info</text>
+                            <text x="260" y="95" class="label">info</text>
+                        </svg>
+                    </div>
+                    <p class="key-point">Los sistemas sociales se constituyen por operaciones (¿comunicaciones?) y dinámicas emergentes: no son un conjunto aditivo o sumatoria de seres humanos</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Slide 5: Autopoiesis -->
-        <div class="slide" data-slide="5">
-            <div class="geometric-bg">
-                <div class="spiral spiral-1"></div>
+            <!-- Slide 7: Niklas Luhmann -->
+            <div class="slide" data-slide="7">
+                <div class="geometric-bg">
+                    <div class="rectangle rect-1"></div>
+                    <div class="rectangle rect-2"></div>
+                </div>
+                <h2 class="slide-title">Niklas Luhmann</h2>
+                <div class="content-box">
+                    <div class="systems-diagram">
+                        <svg viewBox="0 0 350 250">
+                            <rect x="50" y="50" width="250" height="150" class="environment-box"/>
+                            <circle cx="175" cy="125" r="50" class="system-boundary"/>
+                            <text x="175" y="130" class="system-label">Sistema</text>
+                            <text x="100" y="200" class="env-label">Entorno</text>
+                        </svg>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Teoría de sistemas sociales</li>
+                        <li>Diferenciación sistema/entorno</li>
+                        <li>Autopoiesis social</li>
+                        <li>¿Comunicación como operación básica?</li>
+                    </ul>
+                </div>
             </div>
-            <h2 class="slide-title">Autopoiesis</h2>
-            <div class="content-box">
-                <div class="autopoiesis-diagram">
-                    <svg viewBox="0 0 300 300">
-                        <circle cx="150" cy="150" r="100" class="cell-membrane"/>
-                        <circle cx="150" cy="150" r="70" class="cell-inner"/>
-                        <circle cx="120" cy="130" r="15" class="component"/>
-                        <circle cx="180" cy="130" r="15" class="component"/>
-                        <circle cx="150" cy="170" r="15" class="component"/>
-                        <path d="M150,50 L140,70 L160,70 Z" class="production-arrow"/>
+
+            <!-- Slide 8: Complejidad -->
+            <div class="slide" data-slide="8">
+                <div class="geometric-bg">
+                    <div class="fractal fractal-1"></div>
+                </div>
+                <h2 class="slide-title">Complejidad y Reducción</h2>
+                <div class="content-box">
+                    <div class="complexity-visual">
+                        <svg viewBox="0 0 400 250">
+                            <g class="complex-network">
+                                <circle cx="100" cy="80" r="8"/>
+                                <circle cx="150" cy="60" r="8"/>
+                                <circle cx="200" cy="80" r="8"/>
+                                <circle cx="250" cy="60" r="8"/>
+                                <circle cx="300" cy="80" r="8"/>
+                                <circle cx="125" cy="120" r="8"/>
+                                <circle cx="175" cy="140" r="8"/>
+                                <circle cx="225" cy="120" r="8"/>
+                                <circle cx="275" cy="140" r="8"/>
+                                <line x1="100" y1="80" x2="150" y2="60"/>
+                                <line x1="150" y1="60" x2="200" y2="80"/>
+                                <line x1="200" y1="80" x2="250" y2="60"/>
+                                <line x1="250" y1="60" x2="300" y2="80"/>
+                                <line x1="100" y1="80" x2="125" y2="120"/>
+                                <line x1="150" y1="60" x2="175" y2="140"/>
+                                <line x1="200" y1="80" x2="225" y2="120"/>
+                                <line x1="250" y1="60" x2="275" y2="140"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="key-point">Los sistemas reducen la complejidad del entorno mediante selección</p>
+                    <p>Complejidad = exceso de posibilidades</p>
+                </div>
+            </div>
+
+            <!-- Slide 9: Aplicaciones y Futuro -->
+            <div class="slide" data-slide="9">
+                <div class="geometric-bg">
+                    <div class="grid-pattern"></div>
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                </div>
+                <h2 class="slide-title">Aplicaciones y Futuro</h2>
+                <div class="content-box">
+                    <h3 style="color: var(--color-accent); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Presente</h3>
+                    <div class="grid-content" style="margin-bottom: 2rem;">
+                        <div class="grid-item">
+                            <div class="icon-box">🤖</div>
+                            <h4>IA y ML</h4>
+                            <p>Sistemas adaptativos</p>
+                        </div>
+                        <div class="grid-item">
+                            <div class="icon-box">🌐</div>
+                            <h4>Redes</h4>
+                            <p>Dinámica de sistemas y emergencia</p>
+                        </div>
+                        <div class="grid-item">
+                            <div class="icon-box">🏛️</div>
+                            <h4>Política</h4>
+                            <p>Gobernanza sistémica</p>
+                        </div>
+                        <div class="grid-item">
+                            <div class="icon-box">🌍</div>
+                            <h4>Ecología</h4>
+                            <p>Sistemas socioambientales</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--color-teal); font-size: 2rem; margin-bottom: 1rem; margin-top: 2rem; text-align: center;">Futuro</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: 1.4rem;">
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-accent);">
+                            🔮 Epistemología y Constructivismo
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-teal);">
+                            🌟 Sistemas complejos adaptativos
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-pink);">
+                            🔄 Sostenibilidad y pensamiento sistémico
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-green);">
+                            💡 Innovación social
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-purple);">
+                            🚀 Ciberseguridad
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-yellow);">
+                            🔗 Interdisciplinariedad creciente
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Final -->
+            <div class="slide" data-slide="10">
+                <div class="geometric-bg">
+                    <div class="warning-shape"></div>
+                </div>
+                <h2 class="slide-title">Críticas y Limitaciones</h2>
+                <div class="content-box">
+                    <div class="critique-container">
+                        <div class="critique-item">
+                            <span class="critique-icon">⚠️</span>
+                            <p>Tecnocracia y control social</p>
+                        </div>
+                        <div class="critique-item">
+                            <span class="critique-icon">🔍</span>
+                            <p>Reduccionismo mecanicista</p>
+                        </div>
+                        <div class="critique-item">
+                            <span class="critique-icon">👥</span>
+                            <p>Despersonalización</p>
+                        </div>
+                        <div class="critique-item">
+                            <span class="critique-icon">📊</span>
+                            <p>Abstracción excesiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Hacia la Sociocibernética Crítica -->
+            <div class="slide" data-slide="11">
+                <div class="geometric-bg">
+                    <div class="spiral spiral-1"></div>
+                    <div class="triangle triangle-1"></div>
+                    <div class="triangle triangle-2"></div>
+                </div>
+                <h2 class="slide-title">Hacia la Sociocibernética Crítica</h2>
+                <div class="content-box">
+                    <p class="key-point" style="margin-bottom: 2rem;">Respuestas a las críticas y limitaciones</p>
+
+                    <div class="split-content" style="gap: 2rem;">
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-accent);">
+                            <h3 style="color: var(--color-accent); font-size: 2rem; margin-bottom: 1rem; text-align: center;">🔍 Constructivismo</h3>
+                            <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
+                                <li>✓ Reconocimiento del observador</li>
+                                <li>✓ Construcción de realidades</li>
+                                <li>✓ Múltiples perspectivas</li>
+                                <li>✓ Reflexividad epistemológica</li>
+                            </ul>
+                        </div>
+
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-teal);">
+                            <h3 style="color: var(--color-teal); font-size: 2rem; margin-bottom: 1rem; text-align: center;">⚡ Teoría Crítica</h3>
+                            <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
+                                <li>✓ Análisis de poder</li>
+                                <li>✓ Emancipación social</li>
+                                <li>✓ Justicia sistémica</li>
+                                <li>✓ Transformación social</li>
+                            </ul>
+                        </div>
+
+                        <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-pink);">
+                            <h3 style="color: var(--color-pink); font-size: 2rem; margin-bottom: 1rem; text-align: center;">📍 Investigación Situada</h3>
+                            <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
+                                <li>✓ Contextos específicos</li>
+                                <li>✓ Conocimiento localizado</li>
+                                <li>✓ Participación activa</li>
+                                <li>✓ Praxis transformadora</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Final -->
+            <div class="slide" data-slide="12">
+                <div class="geometric-bg">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+                <h1 class="main-title">GRACIAS</h1>
+                <h2 class="subtitle" style="font-size: 1.8rem; margin-top: 2rem;">Seminario de Sociocibernética Crítica</h2>
+                <h3 class="subtitle" style="font-size: 1.5rem; margin-top: 1rem; opacity: 0.9;">Aplicada al Estudio de América del Norte</h3>
+
+                <div class="contact-info" style="margin-top: 3rem;">
+                    <p style="font-size: 1.8rem; font-weight: 600; color: var(--color-accent);">17 de octubre de 2025</p>
+                </div>
+                <div class="wave-container">
+                    <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
                     </svg>
                 </div>
-                <p class="definition">Auto-producción y auto-organización</p>
-                <ul class="bullet-list">
-                    <li>Maturana y Varela</li>
-                    <li>Sistemas vivos se producen a sí mismos</li>
-                    <li>Clausura operacional</li>
-                </ul>
             </div>
         </div>
 
-        <!-- Slide 6: Comunicación y Sociedad -->
-        <div class="slide" data-slide="6">
-            <div class="geometric-bg">
-                <div class="network-node node-1"></div>
-                <div class="network-node node-2"></div>
-                <div class="network-node node-3"></div>
-                <div class="network-line line-1"></div>
-                <div class="network-line line-2"></div>
-            </div>
-            <h2 class="slide-title">Comunicación y Sociedad</h2>
-            <div class="content-box">
-                <div class="communication-diagram">
-                    <svg viewBox="0 0 400 200">
-                        <circle cx="80" cy="100" r="40" class="node"/>
-                        <circle cx="200" cy="100" r="40" class="node"/>
-                        <circle cx="320" cy="100" r="40" class="node"/>
-                        <path d="M120,100 L160,100" class="connection"/>
-                        <path d="M240,100 L280,100" class="connection"/>
-                        <text x="140" y="95" class="label">info</text>
-                        <text x="260" y="95" class="label">info</text>
-                    </svg>
-                </div>
-                <p class="key-point">Los sistemas sociales se constituyen por operaciones (¿comunicaciones?) y dinámicas emergentes: no son un conjunto aditivo o sumatoria de seres humanos</p>
-            </div>
+        <!-- Navigation Controls -->
+        <div class="controls">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></span>
+            <button class="nav-btn" id="nextBtn">→</button>
         </div>
 
-        <!-- Slide 7: Niklas Luhmann -->
-        <div class="slide" data-slide="7">
-            <div class="geometric-bg">
-                <div class="rectangle rect-1"></div>
-                <div class="rectangle rect-2"></div>
-            </div>
-            <h2 class="slide-title">Niklas Luhmann</h2>
-            <div class="content-box">
-                <div class="systems-diagram">
-                    <svg viewBox="0 0 350 250">
-                        <rect x="50" y="50" width="250" height="150" class="environment-box"/>
-                        <circle cx="175" cy="125" r="50" class="system-boundary"/>
-                        <text x="175" y="130" class="system-label">Sistema</text>
-                        <text x="100" y="200" class="env-label">Entorno</text>
-                    </svg>
-                </div>
-                <ul class="bullet-list">
-                    <li>Teoría de sistemas sociales</li>
-                    <li>Diferenciación sistema/entorno</li>
-                    <li>Autopoiesis social</li>
-                    <li>¿Comunicación como operación básica?</li>
-                </ul>
-            </div>
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
-
-        <!-- Slide 8: Complejidad -->
-        <div class="slide" data-slide="8">
-            <div class="geometric-bg">
-                <div class="fractal fractal-1"></div>
-            </div>
-            <h2 class="slide-title">Complejidad y Reducción</h2>
-            <div class="content-box">
-                <div class="complexity-visual">
-                    <svg viewBox="0 0 400 250">
-                        <g class="complex-network">
-                            <circle cx="100" cy="80" r="8"/>
-                            <circle cx="150" cy="60" r="8"/>
-                            <circle cx="200" cy="80" r="8"/>
-                            <circle cx="250" cy="60" r="8"/>
-                            <circle cx="300" cy="80" r="8"/>
-                            <circle cx="125" cy="120" r="8"/>
-                            <circle cx="175" cy="140" r="8"/>
-                            <circle cx="225" cy="120" r="8"/>
-                            <circle cx="275" cy="140" r="8"/>
-                            <line x1="100" y1="80" x2="150" y2="60"/>
-                            <line x1="150" y1="60" x2="200" y2="80"/>
-                            <line x1="200" y1="80" x2="250" y2="60"/>
-                            <line x1="250" y1="60" x2="300" y2="80"/>
-                            <line x1="100" y1="80" x2="125" y2="120"/>
-                            <line x1="150" y1="60" x2="175" y2="140"/>
-                            <line x1="200" y1="80" x2="225" y2="120"/>
-                            <line x1="250" y1="60" x2="275" y2="140"/>
-                        </g>
-                    </svg>
-                </div>
-                <p class="key-point">Los sistemas reducen la complejidad del entorno mediante selección</p>
-                <p>Complejidad = exceso de posibilidades</p>
-            </div>
-        </div>
-
-        <!-- Slide 9: Aplicaciones y Futuro -->
-        <div class="slide" data-slide="9">
-            <div class="geometric-bg">
-                <div class="grid-pattern"></div>
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
-            </div>
-            <h2 class="slide-title">Aplicaciones y Futuro</h2>
-            <div class="content-box">
-                <h3 style="color: var(--color-accent); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Presente</h3>
-                <div class="grid-content" style="margin-bottom: 2rem;">
-                    <div class="grid-item">
-                        <div class="icon-box">🤖</div>
-                        <h4>IA y ML</h4>
-                        <p>Sistemas adaptativos</p>
-                    </div>
-                    <div class="grid-item">
-                        <div class="icon-box">🌐</div>
-                        <h4>Redes</h4>
-                        <p>Dinámica de sistemas y emergencia</p>
-                    </div>
-                    <div class="grid-item">
-                        <div class="icon-box">🏛️</div>
-                        <h4>Política</h4>
-                        <p>Gobernanza sistémica</p>
-                    </div>
-                    <div class="grid-item">
-                        <div class="icon-box">🌍</div>
-                        <h4>Ecología</h4>
-                        <p>Sistemas socioambientales</p>
-                    </div>
-                </div>
-                
-                <h3 style="color: var(--color-teal); font-size: 2rem; margin-bottom: 1rem; margin-top: 2rem; text-align: center;">Futuro</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: 1.4rem;">
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-accent);">
-                        🔮 Epistemología y Constructivismo
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-teal);">
-                        🌟 Sistemas complejos adaptativos
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-pink);">
-                        🔄 Sostenibilidad y pensamiento sistémico
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-green);">
-                        💡 Innovación social
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-purple);">
-                        🚀 Ciberseguridad
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--color-yellow);">
-                        🔗 Interdisciplinariedad creciente
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: Final -->
-        <div class="slide" data-slide="10">
-            <div class="geometric-bg">
-                <div class="warning-shape"></div>
-            </div>
-            <h2 class="slide-title">Críticas y Limitaciones</h2>
-            <div class="content-box">
-                <div class="critique-container">
-                    <div class="critique-item">
-                        <span class="critique-icon">⚠️</span>
-                        <p>Tecnocracia y control social</p>
-                    </div>
-                    <div class="critique-item">
-                        <span class="critique-icon">🔍</span>
-                        <p>Reduccionismo mecanicista</p>
-                    </div>
-                    <div class="critique-item">
-                        <span class="critique-icon">👥</span>
-                        <p>Despersonalización</p>
-                    </div>
-                    <div class="critique-item">
-                        <span class="critique-icon">📊</span>
-                        <p>Abstracción excesiva</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 11: Hacia la Sociocibernética Crítica -->
-        <div class="slide" data-slide="11">
-            <div class="geometric-bg">
-                <div class="spiral spiral-1"></div>
-                <div class="triangle triangle-1"></div>
-                <div class="triangle triangle-2"></div>
-            </div>
-            <h2 class="slide-title">Hacia la Sociocibernética Crítica</h2>
-            <div class="content-box">
-                <p class="key-point" style="margin-bottom: 2rem;">Respuestas a las críticas y limitaciones</p>
-                
-                <div class="split-content" style="gap: 2rem;">
-                    <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-accent);">
-                        <h3 style="color: var(--color-accent); font-size: 2rem; margin-bottom: 1rem; text-align: center;">🔍 Constructivismo</h3>
-                        <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
-                            <li>✓ Reconocimiento del observador</li>
-                            <li>✓ Construcción de realidades</li>
-                            <li>✓ Múltiples perspectivas</li>
-                            <li>✓ Reflexividad epistemológica</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-teal);">
-                        <h3 style="color: var(--color-teal); font-size: 2rem; margin-bottom: 1rem; text-align: center;">⚡ Teoría Crítica</h3>
-                        <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
-                            <li>✓ Análisis de poder</li>
-                            <li>✓ Emancipación social</li>
-                            <li>✓ Justicia sistémica</li>
-                            <li>✓ Transformación social</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border-top: 4px solid var(--color-pink);">
-                        <h3 style="color: var(--color-pink); font-size: 2rem; margin-bottom: 1rem; text-align: center;">📍 Investigación Situada</h3>
-                        <ul style="list-style: none; font-size: 1.4rem; line-height: 2;">
-                            <li>✓ Contextos específicos</li>
-                            <li>✓ Conocimiento localizado</li>
-                            <li>✓ Participación activa</li>
-                            <li>✓ Praxis transformadora</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 12: Final -->
-        <div class="slide" data-slide="12">
-            <div class="geometric-bg">
-                <div class="circle circle-1"></div>
-                <div class="circle circle-2"></div>
-                <div class="circle circle-3"></div>
-            </div>
-            <h1 class="main-title">GRACIAS</h1>
-            <h2 class="subtitle" style="font-size: 1.8rem; margin-top: 2rem;">Seminario de Sociocibernética Crítica</h2>
-            <h3 class="subtitle" style="font-size: 1.5rem; margin-top: 1rem; opacity: 0.9;">Aplicada al Estudio de América del Norte</h3>
-            
-            <div class="contact-info" style="margin-top: 3rem;">
-                <p style="font-size: 1.8rem; font-weight: 600; color: var(--color-accent);">17 de octubre de 2025</p>
-            </div>
-            <div class="wave-container">
-                <svg class="wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-path" d="M0,100 Q300,50 600,100 T1200,100 L1200,200 L0,200 Z" />
-                </svg>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Controls -->
-    <div class="controls">
-        <button class="nav-btn" id="prevBtn">←</button>
-        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></span>
-        <button class="nav-btn" id="nextBtn">→</button>
-    </div>
-
-    <!-- Progress Bar -->
-    <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-    </div>
+    </div><!-- /#presentation-section -->
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,1071 @@
+1
+00:00:26,640 --> 00:00:33,000
+Muchísimas gracias. Entonces, este, a
+
+2
+00:00:29,920 --> 00:00:35,200
+continuación eh quisiera ahora eh
+
+3
+00:00:33,000 --> 00:00:37,160
+presentar eh al Dr. Jorge Cardiel
+
+4
+00:00:35,200 --> 00:00:39,760
+Herrera. Eh, quiero decir que es muy
+
+5
+00:00:37,160 --> 00:00:42,240
+importante eh señalar y reconocer que
+
+6
+00:00:39,760 --> 00:00:44,440
+dentro del seminario de sociocibernética eh
+
+7
+00:00:42,240 --> 00:00:47,480
+de lo poco que entendemos, alguien que
+
+8
+00:00:44,440 --> 00:00:49,720
+nos puede guiar y que nos puede aclarar
+
+9
+00:00:47,480 --> 00:00:51,480
+nuestros puntos de vista, siempre es el
+
+10
+00:00:49,720 --> 00:00:53,800
+doctor Jorge nos orienta porque cuando
+
+11
+00:00:51,480 --> 00:00:56,440
+ya estamos muy confundidos y nos empieza
+
+12
+00:00:53,800 --> 00:00:58,599
+a salir humo de la cabeza, Jorge es el
+
+13
+00:00:56,440 --> 00:01:00,640
+que nos puede dar un norte, entonces muy
+
+14
+00:00:58,599 --> 00:01:02,359
+muy contentos de estar aquí y bueno,
+
+15
+00:01:00,640 --> 00:01:03,599
+este, adelante para que puedas empezar
+
+16
+00:01:02,359 --> 00:01:06,839
+con con tu ponencia.
+
+17
+00:01:03,599 --> 00:01:06,839
+Muchas gracias.
+
+18
+00:01:12,920 --> 00:01:17,160
+Muchas gracias, Juan Manuel. Bueno, me
+
+19
+00:01:14,839 --> 00:01:19,440
+alejo un poco. Este, bueno, muchas
+
+20
+00:01:17,160 --> 00:01:22,160
+gracias. Me da mucho gusto estar aquí.
+
+21
+00:01:19,440 --> 00:01:24,319
+Muchas gracias, Cintia, por este
+
+22
+00:01:22,160 --> 00:01:28,040
+organizar y bueno, por esta oportunidad.
+
+23
+00:01:24,319 --> 00:01:30,720
+Y bueno, como me eh vamos rápido para
+
+24
+00:01:28,040 --> 00:01:33,720
+ver solo un par de cuestiones que hemos
+
+25
+00:01:30,720 --> 00:01:36,440
+discutido. Eh, afortunadamente pues ya
+
+26
+00:01:33,720 --> 00:01:39,079
+tenemos eh pues sí, más de 2 años, me
+
+27
+00:01:36,440 --> 00:01:41,400
+parece que 3 años con el seminario y
+
+28
+00:01:39,079 --> 00:01:43,680
+bueno, ya escucharon al principio al Dr.
+
+29
+00:01:41,400 --> 00:01:45,800
+Juan Carlos Barrón y pues sí, este,
+
+30
+00:01:43,680 --> 00:01:48,560
+seis, ¿verdad? Seis. Ya me perdí en el
+
+31
+00:01:45,800 --> 00:01:50,760
+tiempo mucho más, ¿verdad? Desde 2019,
+
+32
+00:01:48,560 --> 00:01:53,960
+por lo menos, ¿verdad? Sí. Eh, bueno,
+
+33
+00:01:50,760 --> 00:01:55,800
+los años de la pandemia ahí este eh muy
+
+34
+00:01:53,960 --> 00:01:58,160
+bien, pero bueno, les puse ahí algunos
+
+35
+00:01:55,800 --> 00:02:01,640
+conceptos que creo que son clave. Bueno,
+
+36
+00:01:58,160 --> 00:02:04,440
+escucharon ahorita ya eh cómo se pueden
+
+37
+00:02:01,640 --> 00:02:07,440
+aplicar, ¿no?, en varios eh de nuestros
+
+38
+00:02:04,440 --> 00:02:09,720
+casos de estudio que hemos tenido,
+
+39
+00:02:07,440 --> 00:02:12,119
+emergencia, ¿no?, muy importante,
+
+40
+00:02:09,720 --> 00:02:15,200
+también retroalimentación. Ahorita nos
+
+41
+00:02:12,119 --> 00:02:17,839
+dio un ejemplo fabuloso Argelia de de lo
+
+42
+00:02:15,200 --> 00:02:20,559
+que es un bucle, ¿no?, de o un loop,
+
+43
+00:02:17,839 --> 00:02:22,800
+¿no?, de de retroalimentación. positiva
+
+44
+00:02:20,559 --> 00:02:25,440
+y pues también eh lo que hemos tratado
+
+45
+00:02:22,800 --> 00:02:28,200
+de hacer pues es por supuesto romper
+
+46
+00:02:25,440 --> 00:02:30,839
+esta idea de que todo es absolutamente
+
+47
+00:02:28,200 --> 00:02:33,040
+autorregulación, ¿no? Realmente ahí está
+
+48
+00:02:30,839 --> 00:02:36,040
+parte de la cuestión crítica, ¿no? Que
+
+49
+00:02:33,040 --> 00:02:38,319
+se suma. Eh, no traje mucho de teoría
+
+50
+00:02:36,040 --> 00:02:39,839
+crítica, traje más de sociocibernética,
+
+51
+00:02:38,319 --> 00:02:42,319
+pero bueno, la idea del seminario ha
+
+52
+00:02:39,839 --> 00:02:43,440
+sido siempre estar en ambos en ambos
+
+53
+00:02:42,319 --> 00:02:46,079
+puntos, ¿no? Es decir, la
+
+54
+00:02:43,440 --> 00:02:48,480
+sociocibernética, teoría de sistemas y
+
+55
+00:02:46,079 --> 00:02:53,200
+también la teoría crítica, ¿no? Este,
+
+56
+00:02:48,480 --> 00:02:55,760
+que seguramente ya eh conocen eh todas
+
+57
+00:02:53,200 --> 00:02:57,960
+las hay dos unos libros enormes, ¿no?,
+
+58
+00:02:55,760 --> 00:03:00,119
+también de todos los autores de esta
+
+59
+00:02:57,960 --> 00:03:01,920
+tradición de la teoría crítica. Pero
+
+60
+00:03:00,119 --> 00:03:03,680
+bueno, ¿qué sería la cibernética?
+
+61
+00:03:01,920 --> 00:03:06,520
+regresando pues esta ciencia del
+
+62
+00:03:03,680 --> 00:03:08,319
+control, de la comunicación, eh incluso
+
+63
+00:03:06,520 --> 00:03:09,800
+muchos autores clásicos pues lo
+
+64
+00:03:08,319 --> 00:03:12,359
+equiparan, ¿no? Como que dicen, "Bueno,
+
+65
+00:03:09,800 --> 00:03:14,640
+el control es comunicación y la
+
+66
+00:03:12,359 --> 00:03:17,079
+comunicación es control, ¿no? Este, es
+
+67
+00:03:14,640 --> 00:03:21,280
+decir, estamos hablando de formas de
+
+68
+00:03:17,079 --> 00:03:25,640
+coordinación que muchas veces ocurren eh
+
+69
+00:03:21,280 --> 00:03:27,319
+pues de manera eh pues eh de manera en
+
+70
+00:03:25,640 --> 00:03:29,000
+la dinámica, en la evolución de los
+
+71
+00:03:27,319 --> 00:03:31,400
+sistemas, ¿no? Entonces, bueno, esa
+
+72
+00:03:29,000 --> 00:03:35,720
+sería nuestra primera definición de
+
+73
+00:03:31,400 --> 00:03:38,520
+Norbert Wiener, y después ya pasamos a
+
+74
+00:03:35,720 --> 00:03:40,200
+esta parte donde ya distinguimos ahora
+
+75
+00:03:38,520 --> 00:03:44,240
+sociocibernética
+
+76
+00:03:40,200 --> 00:03:46,000
+ya es una segunda generación, ¿no? Más
+
+77
+00:03:44,240 --> 00:03:48,640
+allá de de esta idea de estudiar
+
+78
+00:03:46,000 --> 00:03:51,800
+sistemas, cómo cómo se cómo se gobiernan
+
+79
+00:03:48,640 --> 00:03:55,200
+los sistemas, ahora estudiamos pues cómo
+
+80
+00:03:51,800 --> 00:03:58,200
+también los observadores eh que observan
+
+81
+00:03:55,200 --> 00:04:01,440
+sistemas los están modificando, ¿no? Es
+
+82
+00:03:58,200 --> 00:04:05,079
+decir, su acción de de observación
+
+83
+00:04:01,440 --> 00:04:07,319
+también este los redefine, ¿no? Los va
+
+84
+00:04:05,079 --> 00:04:10,520
+modificando y pues ahí está ya uno de
+
+85
+00:04:07,319 --> 00:04:13,520
+los clásicos de se mencionó hace ratito,
+
+86
+00:04:10,520 --> 00:04:16,280
+lo mencionó Amílcar, ¿no? von Foerster y
+
+87
+00:04:13,520 --> 00:04:19,000
+está lo de Observing Systems, que pues
+
+88
+00:04:16,280 --> 00:04:20,599
+es un título que usa ambas ambos
+
+89
+00:04:19,000 --> 00:04:22,119
+sentidos, ¿no? En inglés, ¿no?
+
+90
+00:04:20,599 --> 00:04:24,559
+Observadores
+
+91
+00:04:22,119 --> 00:04:26,680
+observando sistemas y sistemas que
+
+92
+00:04:24,559 --> 00:04:29,280
+observan, ¿no? Es decir, ambas ambas
+
+93
+00:04:26,680 --> 00:04:31,960
+acepciones, ¿no? Entonces, bueno, ahí
+
+94
+00:04:29,280 --> 00:04:34,640
+tenemos una distinción
+
+95
+00:04:31,960 --> 00:04:37,079
+importante y y cómo se rompe con esta
+
+96
+00:04:34,640 --> 00:04:39,079
+ilusión de la objetividad, ¿no?
+
+97
+00:04:37,079 --> 00:04:40,760
+Ahí empieza eh esta idea del
+
+98
+00:04:39,079 --> 00:04:42,960
+constructivismo
+
+99
+00:04:40,760 --> 00:04:45,000
+eh que también nos hace pensar pues en
+
+100
+00:04:42,960 --> 00:04:47,640
+una dimensión ética, ¿no?, del del
+
+101
+00:04:45,000 --> 00:04:50,200
+observador, ¿no?, como también sus eh
+
+102
+00:04:47,640 --> 00:04:53,800
+descripciones de la realidad también
+
+103
+00:04:50,200 --> 00:04:55,839
+modifican o ponen o cambian este las
+
+104
+00:04:53,800 --> 00:04:59,319
+definición de la situación, ¿no?, de la
+
+105
+00:04:55,839 --> 00:05:02,760
+de la realidad, ¿no? Algunos hitos pues
+
+106
+00:04:59,319 --> 00:05:05,280
+fueron por supuesto el Biological
+
+107
+00:05:02,760 --> 00:05:07,839
+Computer Laboratory y las MAI
+
+108
+00:05:05,280 --> 00:05:09,960
+conferences, las conferencias Macy que
+
+109
+00:05:07,839 --> 00:05:13,400
+pues igual ahí se discutió mucho de esto
+
+110
+00:05:09,960 --> 00:05:15,800
+también con figuras como Margaret Mead y
+
+111
+00:05:13,400 --> 00:05:19,040
+Gregory Bateson, ¿no? Que también dieron
+
+112
+00:05:15,800 --> 00:05:21,559
+un giro pues antropológico, ¿no? también
+
+113
+00:05:19,040 --> 00:05:23,680
+eh contribuyeron mucho a esta idea de de
+
+114
+00:05:21,559 --> 00:05:27,680
+no solo analizar sistemas, sino también
+
+115
+00:05:23,680 --> 00:05:30,359
+observadores que ven eh sistemas, ¿no? Y
+
+116
+00:05:27,680 --> 00:05:32,079
+bueno, ahí hay una parte muy crítica,
+
+117
+00:05:30,359 --> 00:05:34,319
+aunque no están en la tradición de la
+
+118
+00:05:32,079 --> 00:05:36,839
+teoría crítica, que es precisamente
+
+119
+00:05:34,319 --> 00:05:38,599
+cuestionar esta idea del observador
+
+120
+00:05:36,839 --> 00:05:40,640
+omnisciente, ¿no? Es decir, que hubiera
+
+121
+00:05:38,599 --> 00:05:44,440
+un observador que pudiera describir
+
+122
+00:05:40,640 --> 00:05:47,359
+desde fuera. Eh, ahora también se podría
+
+123
+00:05:44,440 --> 00:05:50,960
+decir con otras corrientes, eh, por
+
+124
+00:05:47,359 --> 00:05:53,839
+ejemplo, con Donna Haraway, lo de la eh la
+
+125
+00:05:50,960 --> 00:05:56,000
+eh la investigación situada, ¿no? Es
+
+126
+00:05:53,839 --> 00:05:57,720
+decir, la observación siempre tiene
+
+127
+00:05:56,000 --> 00:06:00,920
+parte desde un punto de vista, ¿no?
+
+128
+00:05:57,720 --> 00:06:03,160
+Donde estamos ubicados. Y pues sí, quizá
+
+129
+00:06:00,920 --> 00:06:05,440
+no es el hilo negro, pero sí hay
+
+130
+00:06:03,160 --> 00:06:08,440
+paralelos, o sea, esta crítica tiene
+
+131
+00:06:05,440 --> 00:06:11,760
+muchas eh correspondencias en otras
+
+132
+00:06:08,440 --> 00:06:14,000
+disciplinas como antropología, pero sí
+
+133
+00:06:11,760 --> 00:06:16,000
+es una manera de vincularlo con la
+
+134
+00:06:14,000 --> 00:06:18,400
+teoría de sistemas, ¿no? Es decir, eh
+
+135
+00:06:16,000 --> 00:06:20,280
+quitar esta idea de la primera
+
+136
+00:06:18,400 --> 00:06:22,680
+cibernética, autoridad de sistemas,
+
+137
+00:06:20,280 --> 00:06:25,760
+donde pues el observador está afuera y
+
+138
+00:06:22,680 --> 00:06:28,599
+hace su esquema y esas son las reglas no
+
+139
+00:06:25,760 --> 00:06:31,200
+definidas, ¿no? sino que también está
+
+140
+00:06:28,599 --> 00:06:33,599
+sobre la sobre el punto de vista también
+
+141
+00:06:31,200 --> 00:06:36,960
+aparece, ¿no? Eh, y bueno, aquí ya
+
+142
+00:06:33,599 --> 00:06:39,119
+llegamos a un concepto que nos ha eh nos
+
+143
+00:06:36,960 --> 00:06:40,720
+tiene discutiendo y bueno, no solo a
+
+144
+00:06:39,119 --> 00:06:42,839
+nosotros, sino a varios grupos, que es
+
+145
+00:06:40,720 --> 00:06:45,599
+el de la autopoyesis, ¿no?, que
+
+146
+00:06:42,839 --> 00:06:47,880
+precisamente creo que una de las cosas
+
+147
+00:06:45,599 --> 00:06:49,880
+que que más hemos discutido es y
+
+148
+00:06:47,880 --> 00:06:53,559
+precisamente está su correlato, ¿no?,
+
+149
+00:06:49,880 --> 00:06:56,040
+con lo de si es este, por decirlo así,
+
+150
+00:06:53,559 --> 00:06:58,200
+como la mano invisible o esta
+
+151
+00:06:56,040 --> 00:07:01,400
+autoorganización de los sistemas
+
+152
+00:06:58,200 --> 00:07:04,839
+económicos o sociales realmente cómo
+
+153
+00:07:01,400 --> 00:07:06,760
+opera o si también eh solamente podemos
+
+154
+00:07:04,839 --> 00:07:08,400
+hablar de autoorganización, ¿no?
+
+155
+00:07:06,760 --> 00:07:11,280
+Entonces, bueno, esa es una de las
+
+156
+00:07:08,400 --> 00:07:14,119
+discusiones que que todavía hemos tenido
+
+157
+00:07:11,280 --> 00:07:15,920
+que y pero bueno, para señalar de dónde
+
+158
+00:07:14,119 --> 00:07:18,680
+viene, pues viene sobre todo de estos
+
+159
+00:07:15,920 --> 00:07:21,680
+postulados de Maturana y Varela y cómo
+
+160
+00:07:18,680 --> 00:07:24,839
+los trabajó Luhmann, ¿no?, con sus con su
+
+161
+00:07:21,680 --> 00:07:27,680
+cuestión de sistemas sociales. Y bueno,
+
+162
+00:07:24,839 --> 00:07:31,319
+para él eh su idea pues eran que los
+
+163
+00:07:27,680 --> 00:07:33,040
+sistemas sociales solo eran operaciones,
+
+164
+00:07:31,319 --> 00:07:35,720
+comunicaciones, ¿no?, que se que
+
+165
+00:07:33,040 --> 00:07:38,599
+interactúan entre sí, dejando fuera pues
+
+166
+00:07:35,720 --> 00:07:41,119
+a lo parte biológica, la parte psíquica,
+
+167
+00:07:38,599 --> 00:07:44,520
+es decir, estaba ahí la parte psíquica
+
+168
+00:07:41,119 --> 00:07:46,640
+como condición de posibilidad, pero no
+
+169
+00:07:44,520 --> 00:07:48,680
+parte de su análisis, ¿no? Esas son
+
+170
+00:07:46,640 --> 00:07:51,280
+ideas que también hemos estado
+
+171
+00:07:48,680 --> 00:07:53,880
+discutiendo y que la verdad estamos más
+
+172
+00:07:51,280 --> 00:07:56,800
+que dispuestos a a pues a tomar
+
+173
+00:07:53,880 --> 00:07:59,240
+distintas soluciones, ¿no? decir también
+
+174
+00:07:56,800 --> 00:08:03,040
+este estas estos que podrían ser como
+
+175
+00:07:59,240 --> 00:08:05,599
+postulados base, pues también estamos en
+
+176
+00:08:03,040 --> 00:08:07,800
+sobre todo interpelándolos con las
+
+177
+00:08:05,599 --> 00:08:09,720
+investigaciones que hacemos, ¿no? Pero
+
+178
+00:08:07,800 --> 00:08:12,400
+bueno, vemos estas interacciones, ¿no?
+
+179
+00:08:09,720 --> 00:08:15,000
+Eso es muy importante ver lo de las
+
+180
+00:08:12,400 --> 00:08:18,480
+interacciones y las dinámicas
+
+181
+00:08:15,000 --> 00:08:22,040
+y bueno, eso de Luhmann, ¿no?, que era la
+
+182
+00:08:18,480 --> 00:08:26,240
+distinción entre sistema entorno y pues
+
+183
+00:08:22,040 --> 00:08:29,240
+sí, no no hemos llegado todavía como a a
+
+184
+00:08:26,240 --> 00:08:31,359
+ni creo que este tal vez tendrá sentido
+
+185
+00:08:29,240 --> 00:08:33,400
+para cada investigación que que se haga,
+
+186
+00:08:31,359 --> 00:08:36,280
+¿no? Es una de las cosas que les
+
+187
+00:08:33,400 --> 00:08:38,599
+quisiera proponer. Eh, y bueno, pero es
+
+188
+00:08:36,280 --> 00:08:42,280
+muy importante también la complejidad y
+
+189
+00:08:38,599 --> 00:08:45,119
+y la reducción, ¿no?, de su complejidad
+
+190
+00:08:42,280 --> 00:08:47,319
+y pues algunas líneas, ¿no?, que se
+
+191
+00:08:45,119 --> 00:08:51,400
+pueden tomar, que se han tomado, porque
+
+192
+00:08:47,319 --> 00:08:54,040
+creo que eh suena como un una pues una
+
+193
+00:08:51,400 --> 00:08:55,960
+disciplina un poco esotérica ahora en
+
+194
+00:08:54,040 --> 00:08:58,079
+2025, pero en realidad está muy
+
+195
+00:08:55,960 --> 00:09:01,520
+presente, ¿no? O sea, si vemos, por
+
+196
+00:08:58,079 --> 00:09:03,640
+ejemplo, la lo de la gobernanza eh se
+
+197
+00:09:01,520 --> 00:09:06,640
+vincula muchísimo, ¿no?, con este
+
+198
+00:09:03,640 --> 00:09:08,400
+estudio de la de la sociocibernética, de los
+
+199
+00:09:06,640 --> 00:09:10,240
+sistemas. Si vemos lo de la
+
+200
+00:09:08,400 --> 00:09:13,240
+sostenibilidad también, ¿no?
+
+201
+00:09:10,240 --> 00:09:15,880
+Concretamente, si vemos cualquier trabajo
+
+202
+00:09:13,240 --> 00:09:19,200
+sobre sostenibilidad, pues hay se hace
+
+203
+00:09:15,880 --> 00:09:21,880
+referencia a ideas precisamente como
+
+204
+00:09:19,200 --> 00:09:24,079
+bucles de retroalimentación, positiva,
+
+205
+00:09:21,880 --> 00:09:26,240
+negativa, emergencia,
+
+206
+00:09:24,079 --> 00:09:30,480
+efectos de red, etcétera, ¿no? Entonces
+
+207
+00:09:26,240 --> 00:09:33,119
+tenemos, por supuesto, esas eh líneas y
+
+208
+00:09:30,480 --> 00:09:35,079
+también tenemos algunas que todavía
+
+209
+00:09:33,119 --> 00:09:38,280
+podemos desarrollar
+
+210
+00:09:35,079 --> 00:09:39,599
+como son este precisamente la más la
+
+211
+00:09:38,280 --> 00:09:42,160
+epistemología, ¿no? Y el
+
+212
+00:09:39,599 --> 00:09:45,000
+constructivismo. Algunas críticas que sí
+
+213
+00:09:42,160 --> 00:09:47,079
+hay que señalar, pues y lo que trata de
+
+214
+00:09:45,000 --> 00:09:49,319
+corregir esta idea de de la
+
+215
+00:09:47,079 --> 00:09:52,200
+sociocibernética crítica, pues es estos
+
+216
+00:09:49,319 --> 00:09:55,599
+riesgos, ¿no?, como de tecnocracia, de
+
+217
+00:09:52,200 --> 00:09:59,599
+reduccionismo o despersonalización, ¿no?
+
+218
+00:09:55,599 --> 00:10:02,599
+Es decir, como estar eh describiendo
+
+219
+00:09:59,599 --> 00:10:05,240
+todo como dinámicas de sistemas podría
+
+220
+00:10:02,599 --> 00:10:08,040
+tener como esa es esa vía, ¿no? Y la ha
+
+221
+00:10:05,240 --> 00:10:10,839
+tenido en varios momentos, pero bueno,
+
+222
+00:10:08,040 --> 00:10:13,119
+ante eso pues les hemos propuesto
+
+223
+00:10:10,839 --> 00:10:15,680
+precisamente en el seminario pues estas
+
+224
+00:10:13,119 --> 00:10:17,400
+estos ejes, ¿no?, que son precisamente
+
+225
+00:10:15,680 --> 00:10:20,440
+la del constructivismo, ¿no?, el
+
+226
+00:10:17,400 --> 00:10:23,319
+epistemológico, la reconocimiento del
+
+227
+00:10:20,440 --> 00:10:26,160
+observador, eh la teoría crítica, ¿no?
+
+228
+00:10:23,319 --> 00:10:28,000
+por supuesto análisis de poder, cómo
+
+229
+00:10:26,160 --> 00:10:29,839
+hacer estas transformaciones, ¿no?,
+
+230
+00:10:28,000 --> 00:10:32,920
+deseables, ¿no? O sea, cómo llevar a los
+
+231
+00:10:29,839 --> 00:10:35,480
+sistemas a estados más deseables que
+
+232
+00:10:32,920 --> 00:10:37,680
+puedan funcionar de una manera pues a lo
+
+233
+00:10:35,480 --> 00:10:39,760
+mejor más distribuida, con más justicia,
+
+234
+00:10:37,680 --> 00:10:42,400
+con emancipación, pero también la
+
+235
+00:10:39,760 --> 00:10:44,799
+investigación situada, ¿no?, que tenemos
+
+236
+00:10:42,400 --> 00:10:46,799
+precisamente como como una praxis, ¿no?,
+
+237
+00:10:44,799 --> 00:10:49,480
+que que va a transformar. también está
+
+238
+00:10:46,799 --> 00:10:52,240
+el vínculo con la IAP, ¿no?, con la
+
+239
+00:10:49,480 --> 00:10:55,119
+investigación acción participativa y
+
+240
+00:10:52,240 --> 00:10:57,280
+bueno, tenemos ahí pues muy prometedor
+
+241
+00:10:55,119 --> 00:10:59,720
+lo que se puede hacer este en esta
+
+242
+00:10:57,280 --> 00:11:01,520
+síntesis, ¿no? Y bueno, les agradezco
+
+243
+00:10:59,720 --> 00:11:05,640
+mucho, me fui lo más rápido que que
+
+244
+00:11:01,520 --> 00:11:05,640
+pude. Gracias.
+
+245
+00:11:08,220 --> 00:11:12,359
+[Aplausos]
+
+246
+00:11:09,799 --> 00:11:14,760
+No, muchísimas este gracias, Jorge. Eh,
+
+247
+00:11:12,359 --> 00:11:17,040
+en la parte de esto, eh, bueno, muy
+
+248
+00:11:14,760 --> 00:11:18,760
+interesante porque siempre nos nos
+
+249
+00:11:17,040 --> 00:11:21,079
+confunde y queremos ver la autopoyesis
+
+250
+00:11:18,760 --> 00:11:23,280
+existe, no existe esta retroalimentación
+
+251
+00:11:21,079 --> 00:11:25,920
+de los sistemas y la parte concreta de
+
+252
+00:11:23,280 --> 00:11:27,400
+cómo se ajustan. si es o es por ejemplo
+
+253
+00:11:25,920 --> 00:11:29,319
+la mano invisible o lo que dicen los
+
+254
+00:11:27,400 --> 00:11:31,319
+franceses que es el laissez-faire o lo que
+
+255
+00:11:29,319 --> 00:11:33,760
+dicen los politólogos gringos que es el
+
+256
+00:11:31,319 --> 00:11:36,040
+self-regulation o puede ser Satanás que
+
+257
+00:11:33,760 --> 00:11:38,040
+va regulando todo porque no sabemos cómo
+
+258
+00:11:36,040 --> 00:11:40,440
+esos sistemas se se van ajustando.
+
+259
+00:11:38,040 --> 00:11:42,400
+Siempre seguimos reflexionando sobre eso
+
+260
+00:11:40,440 --> 00:11:44,280
+y muchísimas este gracias Jorge por
+
+261
+00:11:42,400 --> 00:11:46,400
+darnos estas perspectivas en el ámbito
+
+262
+00:11:44,280 --> 00:11:48,280
+de constructivismo, teoría crítica y
+
+263
+00:11:46,400 --> 00:11:51,079
+bueno, que nos ah nos siguen alimentando
+
+264
+00:11:48,280 --> 00:11:53,200
+en la parte del debate. Ahora quisiera
+
+265
+00:11:51,079 --> 00:11:56,160
+eh presentar.
+
+266
+00:11:53,200 --> 00:11:58,000
+Ah. Ah. Okay.
+
+267
+00:11:56,160 --> 00:12:00,000
+Gracias, Juan Manuel. Bueno, ahora le
+
+268
+00:11:58,000 --> 00:12:00,000
+toca al compañero Juan Manuel hacer su

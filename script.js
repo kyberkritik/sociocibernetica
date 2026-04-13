@@ -1,14 +1,44 @@
-// Presentation Logic
+// ===================================================
+// SECTION NAVIGATION (Landing / Video / Presentation)
+// ===================================================
+function showSection(section) {
+    const landing = document.getElementById('landing-page');
+    const videoSec = document.getElementById('video-section');
+    const presentSec = document.getElementById('presentation-section');
+
+    // Hide all
+    landing.style.display = 'none';
+    videoSec.style.display = 'none';
+    presentSec.style.display = 'none';
+
+    if (section === 'landing') {
+        landing.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else if (section === 'video') {
+        videoSec.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // the section itself scrolls
+        videoSec.scrollTop = 0;
+    } else if (section === 'presentation') {
+        presentSec.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        // Re-initialize presentation state
+        reinitPresentation();
+    }
+}
+
+// ===================================================
+// PRESENTATION LOGIC
+// ===================================================
 let currentSlide = 1;
 const totalSlides = 12;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    updateSlideDisplay();
-    updateProgressBar();
+    // Start on landing page; presentation starts hidden
+    showSection('landing');
     initializeKeyboardNavigation();
+    // Swipe & wheel only affect presentation when active
     initializeSwipeGestures();
-    animateCurrentSlide();
 });
 
 // Navigation Functions
@@ -133,13 +163,18 @@ function animateCurrentSlide() {
     });
 }
 
-// Event Listeners
-document.getElementById('nextBtn').addEventListener('click', nextSlide);
-document.getElementById('prevBtn').addEventListener('click', prevSlide);
+// Event Listeners (buttons may not exist until presentation section is shown)
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'nextBtn') nextSlide();
+    if (e.target.id === 'prevBtn') prevSlide();
+});
 
 // Keyboard Navigation
 function initializeKeyboardNavigation() {
     document.addEventListener('keydown', (e) => {
+        const presentSec = document.getElementById('presentation-section');
+        const presentationActive = presentSec && presentSec.style.display !== 'none';
+        if (!presentationActive) return;
         switch(e.key) {
             case 'ArrowRight':
             case ' ':
@@ -217,21 +252,19 @@ function initializeSwipeGestures() {
     }
 }
 
-// Mouse Wheel Navigation (optional)
+// Mouse Wheel Navigation (presentation only)
 let isScrolling = false;
 document.addEventListener('wheel', (e) => {
+    const presentSec = document.getElementById('presentation-section');
+    if (!presentSec || presentSec.style.display === 'none') return;
     if (!isScrolling) {
         isScrolling = true;
-        
         if (e.deltaY > 0) {
             nextSlide();
         } else if (e.deltaY < 0) {
             prevSlide();
         }
-        
-        setTimeout(() => {
-            isScrolling = false;
-        }, 800);
+        setTimeout(() => { isScrolling = false; }, 800);
     }
 });
 
@@ -384,8 +417,10 @@ class ParticleSystem {
 // Initialize particle system
 const particleSystem = new ParticleSystem();
 
-// Fullscreen Toggle
+// Fullscreen Toggle (presentation only)
 document.addEventListener('keydown', (e) => {
+    const presentSec = document.getElementById('presentation-section');
+    if (!presentSec || presentSec.style.display === 'none') return;
     if (e.key === 'f' || e.key === 'F') {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -530,6 +565,22 @@ function toggleHelpOverlay() {
     } else {
         helpOverlay.remove();
     }
+}
+
+// Re-initialize presentation display when section becomes visible
+function reinitPresentation() {
+    currentSlide = 1;
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(s => {
+        s.classList.remove('active', 'prev');
+        s.style.transform = '';
+        s.style.opacity = '';
+    });
+    const first = document.querySelector('.slide[data-slide="1"]');
+    if (first) first.classList.add('active');
+    updateSlideDisplay();
+    updateProgressBar();
+    animateCurrentSlide();
 }
 
 console.log('🎨 Presentación Sociocibernética cargada correctamente');
