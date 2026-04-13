@@ -1,4 +1,95 @@
 // ===================================================
+// CUSDIS COMMENTS CONFIGURATION
+// ===================================================
+const CUSDIS_HOST      = 'https://cusdis.com';
+const CUSDIS_APP_ID    = '27a523d7-444b-4fb4-8538-a4d952a61dd1';
+const CUSDIS_PAGE_ID   = 'sociocibernetica-jorge-cardiel-2025';
+const CUSDIS_PAGE_TITLE = 'Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera';
+
+function getCusdisDrawerSrc() {
+    const url   = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(CUSDIS_PAGE_TITLE);
+    return `${CUSDIS_HOST}/doc.html?app_id=${CUSDIS_APP_ID}&page_id=${CUSDIS_PAGE_ID}&page_title=${title}&page_url=${url}&theme=dark`;
+}
+
+// Drawer state
+let drawerOpen = false;
+let drawerIframeLoaded = false;
+
+function openCommentsDrawer() {
+    drawerOpen = true;
+    const drawer  = document.getElementById('comments-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    const btn     = document.getElementById('cbar-open-btn');
+
+    // Lazy-load the iframe src only once
+    if (!drawerIframeLoaded) {
+        const iframe = document.getElementById('cusdis-drawer-frame');
+        if (iframe) {
+            iframe.src = getCusdisDrawerSrc();
+            drawerIframeLoaded = true;
+        }
+    }
+
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('open');
+    btn && btn.setAttribute('aria-expanded', 'true');
+}
+
+function closeCommentsDrawer() {
+    drawerOpen = false;
+    const drawer  = document.getElementById('comments-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    const btn     = document.getElementById('cbar-open-btn');
+
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('open');
+    btn && btn.setAttribute('aria-expanded', 'false');
+}
+
+function initCommentsBar() {
+    // Set page_url on the embedded Cusdis div (classic section)
+    const cusdisDiv = document.getElementById('cusdis_thread');
+    if (cusdisDiv) {
+        cusdisDiv.dataset.pageUrl = window.location.href;
+    }
+
+    document.getElementById('cbar-open-btn')
+        ?.addEventListener('click', () => drawerOpen ? closeCommentsDrawer() : openCommentsDrawer());
+
+    document.getElementById('drawer-close-btn')
+        ?.addEventListener('click', closeCommentsDrawer);
+
+    document.getElementById('drawer-overlay')
+        ?.addEventListener('click', closeCommentsDrawer);
+
+    // Close drawer with Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawerOpen) closeCommentsDrawer();
+    });
+}
+
+function scrollToClassicComments() {
+    const videoSec = document.getElementById('video-section');
+    const classic  = document.getElementById('comments-classic-section');
+    if (!classic) return;
+
+    // If video section is not shown, switch to it first
+    if (!videoSec || videoSec.style.display === 'none') {
+        showSection('video');
+    }
+
+    closeCommentsDrawer();
+
+    // Small delay to let section render before scrolling
+    setTimeout(() => {
+        classic.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+}
+
+// ===================================================
 // SECTION NAVIGATION (Landing / Video / Presentation)
 // ===================================================
 function showSection(section) {
@@ -36,6 +127,7 @@ const totalSlides = 12;
 document.addEventListener('DOMContentLoaded', () => {
     // Start on landing page; presentation starts hidden
     showSection('landing');
+    initCommentsBar();
     initializeKeyboardNavigation();
     // Swipe & wheel only affect presentation when active
     initializeSwipeGestures();

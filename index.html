@@ -9,6 +9,51 @@
 <body>
 
     <!-- ================================================
+         BARRA DE COMENTARIOS (persistente en todas las secciones)
+    ================================================ -->
+    <div class="comments-bar" id="comments-bar" role="banner" aria-label="Barra de conversación">
+        <div class="cbar-left">
+            <span class="cbar-dot" aria-hidden="true"></span>
+            <span class="cbar-label">Debate abierto</span>
+        </div>
+        <div class="cbar-ticker" aria-hidden="true">
+            <div class="cbar-track">
+                <span class="cbar-item">Sociocibernética · oct 2025 &nbsp;·&nbsp; ¿Qué diferencia la cibernética de 1.° y 2.° orden? &nbsp;·&nbsp; ¿Implica el constructivismo una responsabilidad ética? &nbsp;·&nbsp; ¿Es la autopoiesis aplicable a sistemas sociales? &nbsp;·&nbsp; ¿Cómo evitar que la sociocibernética caiga en tecnocracia? &nbsp;·&nbsp; ¿Qué aporta la IAP a la teoría de sistemas? &nbsp;·&nbsp; Donna Haraway y el conocimiento situado &nbsp;·&nbsp; Únete al debate &nbsp;·&nbsp;</span>
+                <span class="cbar-item" aria-hidden="true">Sociocibernética · oct 2025 &nbsp;·&nbsp; ¿Qué diferencia la cibernética de 1.° y 2.° orden? &nbsp;·&nbsp; ¿Implica el constructivismo una responsabilidad ética? &nbsp;·&nbsp; ¿Es la autopoiesis aplicable a sistemas sociales? &nbsp;·&nbsp; ¿Cómo evitar que la sociocibernética caiga en tecnocracia? &nbsp;·&nbsp; ¿Qué aporta la IAP a la teoría de sistemas? &nbsp;·&nbsp; Donna Haraway y el conocimiento situado &nbsp;·&nbsp; Únete al debate &nbsp;·&nbsp;</span>
+            </div>
+        </div>
+        <button class="cbar-open-btn" id="cbar-open-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="comments-drawer">
+            <span>💬</span><span>Comentar</span>
+        </button>
+    </div>
+
+    <!-- DRAWER DE COMENTARIOS (panel lateral) -->
+    <div class="comments-drawer" id="comments-drawer" role="dialog" aria-modal="true" aria-label="Comentarios" aria-hidden="true">
+        <div class="drawer-header">
+            <div class="drawer-header-text">
+                <strong>Comentarios</strong>
+                <p>Ponencia: Dr. Jorge Cardiel Herrera · Sociocibernética</p>
+            </div>
+            <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Cerrar panel de comentarios">✕</button>
+        </div>
+        <div class="drawer-actions">
+            <button class="drawer-scroll-btn" id="drawer-scroll-classic" onclick="scrollToClassicComments()">
+                Ver todos los comentarios en la página ↓
+            </button>
+        </div>
+        <div class="drawer-body">
+            <iframe
+                id="cusdis-drawer-frame"
+                class="cusdis-iframe"
+                src=""
+                title="Comentarios — Sociocibernética"
+                allow="clipboard-write"
+            ></iframe>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+
+    <!-- ================================================
          PANTALLA DE SELECCIÓN
     ================================================ -->
     <div id="landing-page" class="landing-page">
@@ -186,6 +231,20 @@
                     <div class="transcript-speaker moderador">Moderador (Juan Manuel) <span class="ts">[~11:09]</span></div>
                     <p>No, muchísimas gracias, Jorge. En la parte de esto, muy interesante porque siempre nos confunde y queremos ver: ¿la autopoiesis existe, no existe? ¿Esta retroalimentación de los sistemas y la parte concreta de cómo se ajustan: es la mano invisible, o lo que dicen los franceses —el <em>laissez-faire</em>, o lo que dicen los politólogos gringos —el <em>self-regulation</em>— o puede ser algo que no sabemos cómo esos sistemas se van ajustando? Siempre seguimos reflexionando sobre eso. Y muchísimas gracias, Jorge, por darnos estas perspectivas en el ámbito del constructivismo y la teoría crítica, que nos siguen alimentando en la parte del debate.</p>
                 </div>
+            </section>
+
+            <!-- Comentarios estilo blog clásico -->
+            <section class="comments-classic" id="comments-classic-section">
+                <h2 class="section-title">Comentarios</h2>
+                <p class="comments-intro">¿Qué reflexiones te genera la ponencia? ¿Cómo relacionas la sociocibernética crítica con tu propia investigación?</p>
+                <div id="cusdis_thread"
+                    data-host="https://cusdis.com"
+                    data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
+                    data-page-id="sociocibernetica-jorge-cardiel-2025"
+                    data-page-url=""
+                    data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
+                ></div>
+                <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
             </section>
 
         </div><!-- /.video-main -->

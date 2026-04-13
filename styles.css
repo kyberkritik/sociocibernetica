@@ -1,5 +1,7 @@
 /* Colores inspirados en pósters vintage de los 70s */
 :root {
+    --bar-height: 40px;
+
     --color-primary: #FF6B35;      /* Naranja vibrante */
     --color-secondary: #F7931E;    /* Naranja medio */
     --color-accent: #FBB03B;       /* Amarillo dorado */
@@ -145,7 +147,7 @@ body {
 =================================================== */
 .back-btn {
     position: fixed;
-    top: 1.2rem;
+    top: calc(var(--bar-height) + 0.8rem);
     left: 1.5rem;
     z-index: 500;
     background: rgba(255,255,255,0.1);
@@ -180,7 +182,7 @@ body {
 
 .video-top-bar {
     position: sticky;
-    top: 0;
+    top: var(--bar-height);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -1554,4 +1556,289 @@ body {
     .slide {
         padding: 2rem;
     }
+}
+
+/* ===================================================
+   COMMENTS BAR
+=================================================== */
+.comments-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--bar-height);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    background: rgba(20, 20, 35, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.78rem;
+    color: var(--color-light);
+    overflow: hidden;
+}
+
+/* Live dot */
+.cbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.cbar-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-green);
+    box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.6);
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+    0%   { box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.7); }
+    70%  { box-shadow: 0 0 0 6px rgba(6, 214, 160, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(6, 214, 160, 0); }
+}
+
+.cbar-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    opacity: 0.9;
+}
+
+/* Ticker */
+.cbar-ticker {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.cbar-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll 55s linear infinite;
+}
+
+.cbar-track:hover {
+    animation-play-state: paused;
+}
+
+.cbar-item {
+    white-space: nowrap;
+    padding-right: 2rem;
+    opacity: 0.65;
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Open button */
+.cbar-open-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    background: var(--color-pink);
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.cbar-open-btn:hover {
+    background: #d0305a;
+    transform: scale(1.03);
+}
+
+.cbar-open-btn[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===================================================
+   COMMENTS DRAWER (panel lateral)
+=================================================== */
+.comments-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(400px, 100vw);
+    height: 100vh;
+    z-index: 3100;
+    background: #1a1b2e;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.comments-drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1.2rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+    padding-top: calc(var(--bar-height) + 0.8rem);
+}
+
+.drawer-header-text strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 0.15rem;
+}
+
+.drawer-header-text p {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.drawer-close-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--color-light);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+
+.drawer-close-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.drawer-actions {
+    padding: 0.6rem 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0;
+}
+
+.drawer-scroll-btn {
+    background: none;
+    border: none;
+    color: var(--color-teal);
+    font-size: 0.78rem;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.drawer-scroll-btn:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.drawer-body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cusdis-iframe {
+    width: 100%;
+    flex: 1;
+    border: none;
+    background: transparent;
+}
+
+/* Overlay */
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3050;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.drawer-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===================================================
+   CLASSIC BLOG COMMENTS SECTION
+=================================================== */
+.comments-classic {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comments-intro {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    opacity: 0.65;
+    margin-bottom: 2rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--color-pink);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Override Cusdis default iframe container to fit dark theme */
+#cusdis_thread {
+    color-scheme: dark;
+}
+
+/* Scroll link from bar to classic section */
+.scroll-to-comments-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-teal);
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    padding: 0;
+}
+
+.scroll-to-comments-link:hover {
+    opacity: 0.8;
 }
