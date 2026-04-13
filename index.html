@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sociocibernética - Presentación Interactiva</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Traducción al español para Cusdis (debe estar antes de que cargue cusdis.es.js)
+        window.CUSDIS_LOCALE = {
+            powered_by:        'Comentarios con Cusdis',
+            post_comment:      'Publicar comentario',
+            loading:           'Cargando…',
+            email:             'Email (opcional)',
+            nickname:          'Nombre o alias',
+            reply_placeholder: 'Únete al debate — deja aquí tu pregunta o reflexión…',
+            reply_btn:         'Responder'
+        };
+    </script>
 </head>
 <body>
 
@@ -42,13 +54,14 @@
             </button>
         </div>
         <div class="drawer-body">
-            <iframe
-                id="cusdis-drawer-frame"
-                class="cusdis-iframe"
-                src=""
-                title="Comentarios — Sociocibernética"
-                allow="clipboard-write"
-            ></iframe>
+            <div id="cusdis_thread_drawer"
+                data-host="https://cusdis.com"
+                data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
+                data-page-id="sociocibernetica-jorge-cardiel-2025"
+                data-page-url=""
+                data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
+                data-theme="dark"
+            ></div>
         </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
@@ -236,14 +249,17 @@
             <!-- Comentarios estilo blog clásico -->
             <section class="comments-classic" id="comments-classic-section">
                 <h2 class="section-title">Comentarios</h2>
-                <p class="comments-intro">¿Qué reflexiones te genera la ponencia? ¿Cómo relacionas la sociocibernética crítica con tu propia investigación?</p>
-                <div id="cusdis_thread"
-                    data-host="https://cusdis.com"
-                    data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
-                    data-page-id="sociocibernetica-jorge-cardiel-2025"
-                    data-page-url=""
-                    data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
-                ></div>
+                <p class="comments-intro">¿Qué reflexiones te genera la ponencia? ¿Cómo relacionas la sociocibernética crítica con tu propia investigación? Comparte tu perspectiva con el seminario.</p>
+                <div class="cusdis-wrap">
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="27a523d7-444b-4fb4-8538-a4d952a61dd1"
+                        data-page-id="sociocibernetica-jorge-cardiel-2025"
+                        data-page-url=""
+                        data-page-title="Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera"
+                        data-theme="dark"
+                    ></div>
+                </div>
                 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
             </section>
 

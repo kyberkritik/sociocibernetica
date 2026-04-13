@@ -6,11 +6,17 @@ const CUSDIS_APP_ID    = '27a523d7-444b-4fb4-8538-a4d952a61dd1';
 const CUSDIS_PAGE_ID   = 'sociocibernetica-jorge-cardiel-2025';
 const CUSDIS_PAGE_TITLE = 'Sociocibernética — Ponencia Dr. Jorge Cardiel Herrera';
 
-function getCusdisDrawerSrc() {
-    const url   = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(CUSDIS_PAGE_TITLE);
-    return `${CUSDIS_HOST}/doc.html?app_id=${CUSDIS_APP_ID}&page_id=${CUSDIS_PAGE_ID}&page_title=${title}&page_url=${url}&theme=dark`;
-}
+// Preguntas de debate para el ticker (fallback si no hay comentarios)
+const TICKER_QUESTIONS = [
+    '¿Qué diferencia la cibernética de 1.° y 2.° orden?',
+    '¿Implica el constructivismo una responsabilidad ética?',
+    '¿Es la autopoiesis aplicable a sistemas sociales?',
+    '¿Cómo evitar que la sociocibernética caiga en tecnocracia?',
+    '¿Qué aporta la IAP a la teoría de sistemas?',
+    'Donna Haraway y el conocimiento situado',
+    '¿La "mano invisible" es equivalente a la autoorganización?',
+    'Únete al debate',
+];
 
 // Drawer state
 let drawerOpen = false;
@@ -22,11 +28,13 @@ function openCommentsDrawer() {
     const overlay = document.getElementById('drawer-overlay');
     const btn     = document.getElementById('cbar-open-btn');
 
-    // Lazy-load the iframe src only once
+    // Lazy-render Cusdis en el drawer usando la misma función que usa el script oficial
     if (!drawerIframeLoaded) {
-        const iframe = document.getElementById('cusdis-drawer-frame');
-        if (iframe) {
-            iframe.src = getCusdisDrawerSrc();
+        const drawerDiv = document.getElementById('cusdis_thread_drawer');
+        if (drawerDiv) {
+            drawerDiv.dataset.pageUrl = window.location.href;
+            // Esperar a que el script de Cusdis esté cargado antes de renderizar
+            renderCusdisWhenReady(drawerDiv);
             drawerIframeLoaded = true;
         }
     }
@@ -35,6 +43,22 @@ function openCommentsDrawer() {
     drawer.setAttribute('aria-hidden', 'false');
     overlay.classList.add('open');
     btn && btn.setAttribute('aria-expanded', 'true');
+}
+
+function renderCusdisWhenReady(el) {
+    if (typeof window.renderCusdis === 'function') {
+        window.renderCusdis(el);
+    } else {
+        // El script aún no cargó — reintentar cada 200ms hasta que esté listo
+        const interval = setInterval(() => {
+            if (typeof window.renderCusdis === 'function') {
+                clearInterval(interval);
+                window.renderCusdis(el);
+            }
+        }, 200);
+        // Parar de reintentar tras 10s
+        setTimeout(() => clearInterval(interval), 10000);
+    }
 }
 
 function closeCommentsDrawer() {
@@ -69,6 +93,79 @@ function initCommentsBar() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawerOpen) closeCommentsDrawer();
     });
+
+    // Auto-resize del iframe de Cusdis via postMessage
+    window.addEventListener('message', (e) => {
+        if (e.origin !== 'https://cusdis.com') return;
+        try {
+            const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+            if (data && data.from === 'cusdis' && data.type === 'resize' && data.height) {
+                // Resize el iframe clásico
+                const classicIframe = document.querySelector('#cusdis_thread iframe');
+                if (classicIframe) {
+                    classicIframe.style.height = `${Math.max(data.height + 40, 500)}px`;
+                }
+            }
+        } catch (_) {}
+    });
+
+    // Fetch comentarios para el ticker
+    fetchCusdisComments();
+}
+
+async function fetchCusdisComments() {
+    try {
+        // Cusdis public API endpoint para comentarios aprobados
+        const url = `${CUSDIS_HOST}/api/open/v1/page/comment?appId=${CUSDIS_APP_ID}&pageId=${CUSDIS_PAGE_ID}&page=1&size=20`;
+        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error('API no disponible');
+        const json = await res.json();
+
+        const comments = (json?.data?.data || json?.data || []).filter(c => c.approved_at);
+        if (comments.length > 0) {
+            buildTickerWithComments(comments);
+        }
+    } catch (_) {
+        // Silently fall back to discussion questions only (already in the ticker)
+    }
+}
+
+function buildTickerWithComments(comments) {
+    const track = document.querySelector('.cbar-track');
+    if (!track) return;
+
+    // Construir items: comentarios reales intercalados con preguntas
+    const allItems = [];
+    comments.forEach(c => {
+        const name = c.by_nickname || 'Participante';
+        const text = (c.content || '').replace(/<[^>]+>/g, '').trim().slice(0, 120);
+        if (text) allItems.push({ type: 'comment', name, text });
+    });
+    TICKER_QUESTIONS.forEach(q => allItems.push({ type: 'question', text: q }));
+
+    const makeSpan = (item) => {
+        const span = document.createElement('span');
+        if (item.type === 'comment') {
+            span.className = 'cbar-item is-comment';
+            span.innerHTML = `<span class="cbar-author">${item.name}</span>: ${item.text} &nbsp;·&nbsp;`;
+        } else {
+            span.className = 'cbar-item';
+            span.textContent = item.text + ' · ';
+        }
+        return span;
+    };
+
+    // Limpiar y reconstruir con contenido duplicado para loop continuo
+    track.innerHTML = '';
+    const wrap1 = document.createElement('span');
+    const wrap2 = document.createElement('span');
+    wrap2.setAttribute('aria-hidden', 'true');
+    allItems.forEach(item => {
+        wrap1.appendChild(makeSpan(item));
+        wrap2.appendChild(makeSpan(item));
+    });
+    track.appendChild(wrap1);
+    track.appendChild(wrap2);
 }
 
 function scrollToClassicComments() {
