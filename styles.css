@@ -1762,6 +1762,9 @@ body {
     padding: 0.6rem 1.2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .drawer-scroll-btn {
@@ -1822,6 +1825,34 @@ body {
     margin-top: 3rem;
     padding-top: 2.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comments-classic-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.reload-btn {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-accent);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.reload-btn:hover {
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.reload-btn:active {
+    transform: rotate(180deg);
 }
 
 .comments-intro {

@@ -47,18 +47,50 @@ function openCommentsDrawer() {
 }
 
 function renderCusdisWhenReady(el) {
+    // Añadir timestamp al page_url para romper caché del iframe en cada render
+    el.dataset.pageUrl = window.location.href.split('?')[0] + '?t=' + Date.now();
+
     if (typeof window.renderCusdis === 'function') {
         window.renderCusdis(el);
     } else {
-        // El script aún no cargó — reintentar cada 200ms hasta que esté listo
         const interval = setInterval(() => {
             if (typeof window.renderCusdis === 'function') {
                 clearInterval(interval);
                 window.renderCusdis(el);
             }
         }, 200);
-        // Parar de reintentar tras 10s
         setTimeout(() => clearInterval(interval), 10000);
+    }
+}
+
+// Fuerza recarga fresca de un embed de Cusdis eliminando su iframe y re-renderizando
+function reloadCusdisEmbed(el) {
+    if (!el) return;
+    const existing = el.querySelector('iframe');
+    if (existing) existing.remove();
+    renderCusdisWhenReady(el);
+}
+
+function reloadDrawerCusdis() {
+    drawerIframeLoaded = false;
+    const el = document.getElementById('cusdis_thread_drawer');
+    if (el) reloadCusdisEmbed(el);
+    drawerIframeLoaded = true;
+}
+
+function reloadAllCusdis() {
+    // Recarga la sección clásica
+    classicCusdisLoaded = false;
+    const classic = document.getElementById('cusdis_thread');
+    if (classic) reloadCusdisEmbed(classic);
+    classicCusdisLoaded = true;
+
+    // Si el drawer está abierto, recarga también
+    if (drawerOpen) {
+        drawerIframeLoaded = false;
+        const drawer = document.getElementById('cusdis_thread_drawer');
+        if (drawer) reloadCusdisEmbed(drawer);
+        drawerIframeLoaded = true;
     }
 }
 

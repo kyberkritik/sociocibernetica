@@ -52,6 +52,9 @@
             <button class="drawer-scroll-btn" id="drawer-scroll-classic" onclick="scrollToClassicComments()">
                 Ver todos los comentarios en la página ↓
             </button>
+            <button class="drawer-scroll-btn" onclick="reloadDrawerCusdis()" style="margin-left:auto; color: var(--color-accent);">
+                ↻ Actualizar
+            </button>
         </div>
         <div class="drawer-body">
             <div id="cusdis_thread_drawer"
@@ -248,7 +251,12 @@
 
             <!-- Comentarios estilo blog clásico -->
             <section class="comments-classic" id="comments-classic-section">
-                <h2 class="section-title">Comentarios</h2>
+                <div class="comments-classic-hd">
+                    <h2 class="section-title" style="margin-bottom:0">Comentarios</h2>
+                    <button class="reload-btn" onclick="reloadAllCusdis()" title="Recargar comentarios">
+                        ↻ Actualizar
+                    </button>
+                </div>
                 <p class="comments-intro">¿Qué reflexiones te genera la ponencia? ¿Cómo relacionas la sociocibernética crítica con tu propia investigación? Comparte tu perspectiva con el seminario.</p>
                 <div class="cusdis-wrap">
                     <div id="cusdis_thread"
