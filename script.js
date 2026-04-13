@@ -142,63 +142,69 @@ function initCommentsBar() {
         } catch (_) {}
     });
 
-    // Fetch comentarios para el ticker
+    // Fetch comentarios para el ticker + auto-refresh
     fetchCusdisComments();
+    startCommentAutoRefresh();
 }
 
 async function fetchCusdisComments() {
     try {
-        // Cusdis public API endpoint para comentarios aprobados
-        const url = `${CUSDIS_HOST}/api/open/v1/page/comment?appId=${CUSDIS_APP_ID}&pageId=${CUSDIS_PAGE_ID}&page=1&size=20`;
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-        if (!res.ok) throw new Error('API no disponible');
+        // Endpoint real descubierto en iframe.umd.js de Cusdis
+        const url = `${CUSDIS_HOST}/api/open/comments?appId=${CUSDIS_APP_ID}&pageId=${CUSDIS_PAGE_ID}`;
+        const res = await fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
+        if (!res.ok) throw new Error('no disponible');
         const json = await res.json();
 
-        const comments = (json?.data?.data || json?.data || []).filter(c => c.approved_at);
+        const comments = json?.data?.data || [];
         if (comments.length > 0) {
-            buildTickerWithComments(comments);
+            buildCommentsTicker(comments);
         }
     } catch (_) {
-        // Silently fall back to discussion questions only (already in the ticker)
+        // Silently keep only the questions ticker
     }
 }
 
-function buildTickerWithComments(comments) {
-    const track = document.querySelector('.cbar-track');
-    if (!track) return;
+function buildCommentsTicker(comments) {
+    const track = document.getElementById('ctbar-track');
+    const bar   = document.getElementById('comments-ticker-bar');
+    if (!track || !bar) return;
 
-    // Construir items: comentarios reales intercalados con preguntas
-    const allItems = [];
-    comments.forEach(c => {
-        const name = c.by_nickname || 'Participante';
-        const text = (c.content || '').replace(/<[^>]+>/g, '').trim().slice(0, 120);
-        if (text) allItems.push({ type: 'comment', name, text });
-    });
-    TICKER_QUESTIONS.forEach(q => allItems.push({ type: 'question', text: q }));
+    // Construir items con comentarios reales
+    const items = comments.map(c => ({
+        name: c.by_nickname || 'Participante',
+        text: (c.content || '').replace(/<[^>]+>/g, '').trim().slice(0, 140),
+    })).filter(c => c.text);
+
+    if (items.length === 0) return;
 
     const makeSpan = (item) => {
         const span = document.createElement('span');
-        if (item.type === 'comment') {
-            span.className = 'cbar-item is-comment';
-            span.innerHTML = `<span class="cbar-author">${item.name}</span>: ${item.text} &nbsp;·&nbsp;`;
-        } else {
-            span.className = 'cbar-item';
-            span.textContent = item.text + ' · ';
-        }
+        span.className = 'ctbar-item';
+        const author = document.createElement('span');
+        author.className = 'ctbar-author';
+        author.textContent = item.name + ':';
+        span.appendChild(author);
+        span.append(' ' + item.text + ' · ');
         return span;
     };
 
-    // Limpiar y reconstruir con contenido duplicado para loop continuo
+    // Duplicar para loop continuo
     track.innerHTML = '';
-    const wrap1 = document.createElement('span');
-    const wrap2 = document.createElement('span');
-    wrap2.setAttribute('aria-hidden', 'true');
-    allItems.forEach(item => {
-        wrap1.appendChild(makeSpan(item));
-        wrap2.appendChild(makeSpan(item));
-    });
-    track.appendChild(wrap1);
-    track.appendChild(wrap2);
+    const w1 = document.createElement('span');
+    const w2 = document.createElement('span');
+    w2.setAttribute('aria-hidden', 'true');
+    items.forEach(item => { w1.appendChild(makeSpan(item)); w2.appendChild(makeSpan(item)); });
+    track.appendChild(w1);
+    track.appendChild(w2);
+
+    // Mostrar la barra y ajustar el offset CSS
+    bar.classList.add('active');
+    document.documentElement.style.setProperty('--bar2-height', '44px');
+}
+
+// Refresco automático de comentarios cada 2 minutos
+function startCommentAutoRefresh() {
+    setInterval(fetchCusdisComments, 2 * 60 * 1000);
 }
 
 // Garantiza que el embed clásico de Cusdis esté inicializado
@@ -530,7 +536,7 @@ class GeometricAnimator {
         });
         
         // Rotate squares continuously
-        this.shapes.squares.forEach((square, index) => {
+        this.shapes.squares.forEach((square) => {
             let rotation = 45;
             setInterval(() => {
                 rotation += 0.5;

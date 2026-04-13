@@ -1,6 +1,8 @@
 /* Colores inspirados en pósters vintage de los 70s */
 :root {
     --bar-height: 52px;
+    --bar2-height: 0px;
+    --total-bar-height: calc(var(--bar-height) + var(--bar2-height));
 
     --color-primary: #FF6B35;      /* Naranja vibrante */
     --color-secondary: #F7931E;    /* Naranja medio */
@@ -166,7 +168,7 @@ body {
 /* Solo el botón de volver de la presentación es fixed */
 .presentation-back {
     position: fixed;
-    top: calc(var(--bar-height) + 0.8rem);
+    top: calc(var(--total-bar-height) + 0.8rem);
     left: 1.5rem;
     z-index: 200;
 }
@@ -183,7 +185,7 @@ body {
 
 .video-top-bar {
     position: sticky;
-    top: var(--bar-height);
+    top: var(--total-bar-height);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -1557,7 +1559,81 @@ body {
 }
 
 /* ===================================================
-   COMMENTS BAR
+   COMMENTS TICKER BAR (segunda barra — comentarios reales)
+=================================================== */
+#comments-ticker-bar {
+    position: fixed;
+    top: var(--bar-height);
+    left: 0;
+    right: 0;
+    height: 44px;
+    z-index: 2999;
+    display: none;          /* oculta hasta que haya comentarios */
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.2rem;
+    background: rgba(10, 10, 22, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(251, 176, 59, 0.18);
+    overflow: hidden;
+}
+
+#comments-ticker-bar.active {
+    display: flex;
+}
+
+.ctbar-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.ctbar-ticker {
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.ctbar-track {
+    display: flex;
+    width: max-content;
+    animation: cticker-scroll 70s linear infinite;
+}
+
+.ctbar-track:hover {
+    animation-play-state: paused;
+}
+
+.ctbar-item {
+    white-space: nowrap;
+    padding-right: 3rem;
+    font-size: 0.86rem;
+    color: var(--color-light);
+    opacity: 0.9;
+}
+
+.ctbar-author {
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-right: 0.3em;
+}
+
+@keyframes cticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ===================================================
+   COMMENTS BAR (primera barra — preguntas)
 =================================================== */
 .comments-bar {
     position: fixed;
